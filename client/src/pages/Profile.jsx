@@ -60,7 +60,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] py-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">
         
         {/* User Card */}

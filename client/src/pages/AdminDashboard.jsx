@@ -153,7 +153,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] pb-24">
+    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] pb-24">
       {/* Top Banner */}
       <div className="bg-[#24150F] border-b border-[#B58A4F]/30 px-4 sm:px-8 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">

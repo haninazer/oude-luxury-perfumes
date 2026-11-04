@@ -108,7 +108,7 @@ export default function Checkout() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-[75vh] bg-[#1C100B] flex items-center justify-center px-4 pt-20">
+      <div className="min-h-[75vh] bg-[#24150F] flex items-center justify-center px-4 pt-20">
         <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4 shadow-xl">
           <p className="font-serif text-2xl">Your Bag is Empty</p>
           <p className="text-xs text-[#D8B995]/70">
@@ -126,7 +126,7 @@ export default function Checkout() {
   }
 
   return (
-    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] pb-24 pt-20">
+    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] pb-24 pt-20">
       {/* Header */}
       <div className="bg-[#24150F] text-[#F3E5D2] py-8 border-b border-[#B58A4F]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

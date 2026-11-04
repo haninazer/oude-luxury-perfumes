@@ -43,7 +43,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1C100B] text-[#F3E5D2] flex items-center justify-center px-4 py-24">
+    <div className="min-h-screen bg-[#24150F] text-[#F3E5D2] flex items-center justify-center px-4 py-24">
       <div className="max-w-md w-full bg-[#24150F] text-[#F3E5D2] rounded-3xl border border-[#B58A4F]/35 shadow-2xl p-8 sm:p-10 space-y-6">
         
         {/* Header */}

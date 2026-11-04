@@ -93,9 +93,9 @@ export default function Shop() {
   const hasActiveFilters = currentCategory !== 'All' || searchQuery.trim() !== '' || maxPrice < 6000 || sortBy !== 'featured';
 
   return (
-    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] pb-24 pt-20">
+    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] pb-24 pt-20">
       {/* Header Banner */}
-      <div className="bg-gradient-to-b from-[#24150F] to-[#1C100B] text-[#F3E5D2] py-16 px-4 sm:px-6 lg:px-8 border-b border-[#B58A4F]/30 text-center relative overflow-hidden">
+      <div className="bg-gradient-to-b from-[#24150F] to-[#2D1B13] text-[#F3E5D2] py-16 px-4 sm:px-6 lg:px-8 border-b border-[#B58A4F]/30 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto space-y-3 relative z-10">
           <span className="text-xs uppercase font-serif tracking-[0.28em] text-[#B58A4F] block">
             The OUDÉ Fragrance Anthology

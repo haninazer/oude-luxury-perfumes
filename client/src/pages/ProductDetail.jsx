@@ -43,7 +43,7 @@ export default function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#1C100B] flex items-center justify-center">
+      <div className="min-h-screen bg-[#24150F] flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-12 h-12 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="font-serif text-[#D8B995] text-base">Unveiling Fragrance Essence...</p>
@@ -54,7 +54,7 @@ export default function ProductDetail() {
 
   if (error || !product) {
     return (
-      <div className="min-h-[70vh] bg-[#1C100B] flex items-center justify-center px-4">
+      <div className="min-h-[70vh] bg-[#24150F] flex items-center justify-center px-4">
         <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4">
           <p className="font-serif text-2xl text-red-400">Fragrance Unavailable</p>
           <p className="text-xs text-[#D8B995]/70">{error || 'This fragrance profile could not be found.'}</p>
@@ -87,7 +87,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="bg-[#1C100B] text-[#F3E5D2] min-h-screen pb-24 pt-20">
+    <div className="bg-[#24150F] text-[#F3E5D2] min-h-screen pb-24 pt-20">
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-[#D8B995]/70 flex items-center space-x-2">
         <Link to="/" className="hover:text-[#B58A4F]">Home</Link>

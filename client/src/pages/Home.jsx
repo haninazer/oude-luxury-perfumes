@@ -35,7 +35,7 @@ export default function Home({ onOpenQuiz }) {
   };
 
   return (
-    <div className="bg-[#1C100B] text-[#F3E5D2] overflow-hidden">
+    <div className="bg-[#24150F] text-[#F3E5D2] overflow-hidden">
       
       {/* 1. PRIMARY HERO SECTION - 2K ULTRA HD DESERT SUNSET & GROUNDED FLACON */}
       <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-[#24150F]">
@@ -134,7 +134,7 @@ export default function Home({ onOpenQuiz }) {
       >
         {/* Top & Bottom Deep Espresso Vignette Shadows for Seamless Transition */}
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#24150F] to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#1C100B] to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#24150F] to-transparent pointer-events-none" />
 
         {/* Center Contrast Shade for Text Readability */}
         <div className="absolute inset-0 bg-[#24150F]/45 backdrop-blur-[1px] pointer-events-none" />
@@ -236,46 +236,48 @@ export default function Home({ onOpenQuiz }) {
       </section>
 
       {/* 3. THE SEVEN PERFUMES COLLECTION (MATCHING DARK LUXURY ARABIAN THEME) */}
-      <section id="collection" className="py-24 px-6 sm:px-10 lg:px-14 max-w-7xl mx-auto bg-[#1C100B]">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
-            The OUDÉ Fragrance Anthology
-          </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#F3E5D2]">
-            The Seven Iconic Creations
-          </h2>
-          <div className="w-16 h-0.5 bg-[#B58A4F] mx-auto mt-2" />
-          <p className="text-sm text-[#D8B995]/80 font-light leading-relaxed">
-            Each flacon represents a distinct olfactory odyssey—formulated with 28% Extrait de Parfum concentration for unyielding longevity and majestic sillage.
-          </p>
-        </div>
-
-        {/* Product Cards Grid */}
-        {loading ? (
-          <div className="py-20 text-center">
-            <div className="w-10 h-10 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="font-serif text-sm text-[#D8B995] mt-3">Curating the Fragrances...</p>
+      <section id="collection" className="w-full bg-[#24150F] py-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
+              The OUDÉ Fragrance Anthology
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#F3E5D2]">
+              The Seven Iconic Creations
+            </h2>
+            <div className="w-16 h-0.5 bg-[#B58A4F] mx-auto mt-2" />
+            <p className="text-sm text-[#D8B995]/80 font-light leading-relaxed">
+              Each flacon represents a distinct olfactory odyssey—formulated with 28% Extrait de Parfum concentration for unyielding longevity and majestic sillage.
+            </p>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            {products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onQuickView={(p) => setQuickViewProduct(p)}
-              />
-            ))}
-          </div>
-        )}
 
-        <div className="text-center mt-14">
-          <Link
-            to="/shop"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-[#B58A4F] hover:bg-[#D4AF37] text-[#24150F] text-xs font-serif uppercase tracking-[0.2em] font-bold transition-all shadow-gold-glow"
-          >
-            <span>Explore All 7 Fragrances & Filter Notes</span>
-            <ArrowRight className="w-4 h-4 text-[#24150F]" />
-          </Link>
+          {/* Product Cards Grid */}
+          {loading ? (
+            <div className="py-20 text-center">
+              <div className="w-10 h-10 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
+              <p className="font-serif text-sm text-[#D8B995] mt-3">Curating the Fragrances...</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onQuickView={(p) => setQuickViewProduct(p)}
+                />
+              ))}
+            </div>
+          )}
+
+          <div className="text-center mt-14">
+            <Link
+              to="/shop"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#B58A4F] hover:bg-[#D4AF37] text-[#24150F] text-xs font-serif uppercase tracking-[0.2em] font-bold transition-all shadow-gold-glow"
+            >
+              <span>Explore All 7 Fragrances & Filter Notes</span>
+              <ArrowRight className="w-4 h-4 text-[#24150F]" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -338,25 +340,27 @@ export default function Home({ onOpenQuiz }) {
       </section>
 
       {/* 5. SCENT QUIZ PROFILER CALLOUT */}
-      <section id="quiz" className="py-20 px-6 sm:px-10 lg:px-14 max-w-5xl mx-auto text-center">
-        <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 shadow-2xl text-[#F3E5D2] relative overflow-hidden">
-          <div className="relative z-10 max-w-xl mx-auto space-y-4">
-            <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
-              Sensory Diagnostics
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold">
-              Find Your Signature Arabian Scent
-            </h2>
-            <p className="text-xs sm:text-sm text-[#D8B995]/80 font-light leading-relaxed">
-              Answer 3 quick sensory questions about your personality, mood, and preferred sillage. Our olfactory engine will match you with your exact OUDÉ flacon.
-            </p>
-            <div className="pt-4">
-              <button
-                onClick={onOpenQuiz}
-                className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-full shadow-gold-glow transition-all"
-              >
-                Start Scent Quiz (60 Seconds)
-              </button>
+      <section id="quiz" className="w-full bg-[#24150F] py-20 border-t border-[#B58A4F]/20">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-14 text-center">
+          <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 shadow-2xl text-[#F3E5D2] relative overflow-hidden">
+            <div className="relative z-10 max-w-xl mx-auto space-y-4">
+              <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
+                Sensory Diagnostics
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold">
+                Find Your Signature Arabian Scent
+              </h2>
+              <p className="text-xs sm:text-sm text-[#D8B995]/80 font-light leading-relaxed">
+                Answer 3 quick sensory questions about your personality, mood, and preferred sillage. Our olfactory engine will match you with your exact OUDÉ flacon.
+              </p>
+              <div className="pt-4">
+                <button
+                  onClick={onOpenQuiz}
+                  className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-full shadow-gold-glow transition-all"
+                >
+                  Start Scent Quiz (60 Seconds)
+                </button>
+              </div>
             </div>
           </div>
         </div>
