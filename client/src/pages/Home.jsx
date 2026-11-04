@@ -4,6 +4,7 @@ import { ArrowUpRight, Sparkles, Star, ShieldCheck, Truck, RefreshCw, Compass, A
 import { productApi } from '../services/api.js';
 import ProductCard from '../components/ProductCard.jsx';
 import QuickViewModal from '../components/QuickViewModal.jsx';
+import HeroFlacon from '../components/HeroFlacon.jsx';
 
 export default function Home({ onOpenQuiz }) {
   const [products, setProducts] = useState([]);
@@ -29,62 +30,81 @@ export default function Home({ onOpenQuiz }) {
   return (
     <div className="bg-[#F3E5D2] text-[#24150F] overflow-hidden">
       
-      {/* 1. HERO SECTION - MATCHING REFERENCE SCREENSHOT EXACTLY */}
-      <section
-        className="relative min-h-screen w-full bg-cover bg-right sm:bg-center flex items-center pt-24 sm:pt-0"
-        style={{
-          backgroundImage: `url('/hero-clean.jpg')`,
-          backgroundColor: '#E8C9A8'
-        }}
-      >
-        {/* Subtle warm ambient overlay gradient to ensure high readability on any screen size */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F3E5D2]/70 via-[#F3E5D2]/25 to-transparent pointer-events-none md:max-w-3xl" />
+      {/* 1. HERO SECTION WITH SEPARATE MOBILE & DESKTOP BACKGROUNDS + ANIMATED PRODUCT FLACON */}
+      <section className="relative min-h-screen w-full flex items-center overflow-hidden pt-28 sm:pt-0">
+        
+        {/* Laptop / Desktop Background Image (16:9 Landscape) */}
+        <div
+          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
+          style={{ backgroundImage: `url('/bg-desktop.jpg')` }}
+        />
 
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full z-10 py-16 sm:py-24">
-          <div className="max-w-xl space-y-6 sm:space-y-8">
+        {/* Mobile Background Image (Vertical / Portrait) */}
+        <div
+          className="block md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
+          style={{ backgroundImage: `url('/bg-mobile.jpg')` }}
+        />
+
+        {/* Ambient Warm Golden Overlay for Text Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F3E5D2]/80 via-[#F3E5D2]/30 to-transparent pointer-events-none md:max-w-2xl lg:max-w-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full z-10 py-12 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            {/* Pre-Heading */}
-            <div className="flex items-center space-x-2">
-              <span className="text-[11px] sm:text-xs uppercase font-serif tracking-[0.25em] text-[#352014] font-medium">
-                OUDÉ — THE ART OF ARABIAN PERFUMERY
-              </span>
+            {/* Left Column: Hero Narrative & CTA */}
+            <div className="md:col-span-7 lg:col-span-7 max-w-xl space-y-6 sm:space-y-8">
+              
+              {/* Pre-Heading */}
+              <div className="flex items-center space-x-2">
+                <span className="text-[11px] sm:text-xs uppercase font-serif tracking-[0.25em] text-[#352014] font-medium">
+                  OUDÉ — THE ART OF ARABIAN PERFUMERY
+                </span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#24150F] leading-[1.05] tracking-tight">
+                THE ESSENCE OF<br />
+                ARABIAN<br />
+                LUXURY.
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-sm sm:text-base md:text-lg text-[#352014]/90 font-light leading-relaxed max-w-md">
+                A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
+                <Link
+                  to="/shop"
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-gold-glow"
+                >
+                  <span>DISCOVER THE COLLECTION</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#D8B995] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
+
+                <button
+                  onClick={onOpenQuiz}
+                  className="inline-flex items-center space-x-2 px-6 py-4 bg-[#F3E5D2]/80 hover:bg-[#F3E5D2] text-[#24150F] border border-[#24150F]/30 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-medium transition-all"
+                >
+                  <Compass className="w-3.5 h-3.5 text-[#B58A4F]" />
+                  <span>Scent Profiler</span>
+                </button>
+              </div>
+
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#24150F] leading-[1.06] tracking-tight">
-              THE ESSENCE OF<br />
-              ARABIAN<br />
-              LUXURY.
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-[#352014]/90 font-light leading-relaxed max-w-md">
-              A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
-            </p>
-
-            {/* Discover The Collection CTA Button */}
-            <div className="pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
-              <Link
-                to="/shop"
-                className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-gold-glow"
-              >
-                <span>DISCOVER THE COLLECTION</span>
-                <ArrowUpRight className="w-4 h-4 text-[#D8B995] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-
-              <button
-                onClick={onOpenQuiz}
-                className="hidden sm:inline-flex items-center space-x-2 px-6 py-4 bg-[#F3E5D2]/80 hover:bg-[#F3E5D2] text-[#24150F] border border-[#24150F]/30 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-medium transition-all"
-              >
-                <Compass className="w-3.5 h-3.5 text-[#B58A4F]" />
-                <span>Scent Profiler</span>
-              </button>
+            {/* Right Column (Desktop): The Animated OUDÉ Perfume Flacon sitting on the stone pedestal */}
+            <div className="md:col-span-5 lg:col-span-5 flex justify-center md:justify-end items-end relative pt-6 md:pt-0">
+              <div className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-88 relative">
+                <HeroFlacon onOpenQuiz={onOpenQuiz} />
+              </div>
             </div>
 
           </div>
         </div>
 
-        {/* Subtle bottom fade transition into the collection section */}
+        {/* Soft bottom edge blend */}
         <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#F3E5D2] to-transparent pointer-events-none" />
       </section>
 
@@ -134,7 +154,6 @@ export default function Home({ onOpenQuiz }) {
 
       {/* 3. OUR STORY SECTION */}
       <section id="story" className="bg-[#24150F] text-[#F3E5D2] py-24 border-y border-[#B58A4F]/30 relative overflow-hidden">
-        {/* Subtle decorative motif */}
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
