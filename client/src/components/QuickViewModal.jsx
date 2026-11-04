@@ -28,7 +28,7 @@ export default function QuickViewModal({ product, onClose }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#D8B995]/70 hover:text-[#B58A4F] p-1.5 rounded transition-colors z-20"
+          className="absolute top-4 right-4 text-[#D8B995]/70 hover:text-[#D4AF37] hover:scale-120 p-1.5 rounded transition-all z-20"
         >
           <X className="w-5 h-5" />
         </button>
@@ -98,10 +98,10 @@ export default function QuickViewModal({ product, onClose }) {
             {/* Quantity and Actions */}
             <div className="pt-2 space-y-3">
               <div className="flex items-center space-x-4">
-                <div className="flex items-center border border-[#B58A4F]/40 rounded bg-[#352014] px-3 py-1.5 space-x-3">
+                <div className="flex items-center border border-[#B58A4F]/40 hover:border-[#D4AF37] transition-colors rounded bg-[#352014] px-3 py-1.5 space-x-3">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="text-[#D8B995] hover:text-[#B58A4F] disabled:opacity-40"
+                    className="text-[#D8B995] hover:text-[#D4AF37] hover:scale-125 transition-all disabled:opacity-40"
                     disabled={quantity <= 1 || isOutOfStock}
                   >
                     -
@@ -109,7 +109,7 @@ export default function QuickViewModal({ product, onClose }) {
                   <span className="text-xs font-mono font-medium text-[#F3E5D2]">{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="text-[#D8B995] hover:text-[#B58A4F] disabled:opacity-40"
+                    className="text-[#D8B995] hover:text-[#D4AF37] hover:scale-125 transition-all disabled:opacity-40"
                     disabled={quantity >= product.stock || isOutOfStock}
                   >
                     +
@@ -119,10 +119,10 @@ export default function QuickViewModal({ product, onClose }) {
                 <button
                   onClick={handleAdd}
                   disabled={isOutOfStock || loading}
-                  className={`flex-1 py-3 px-6 rounded-lg text-xs uppercase tracking-wider font-bold transition-all shadow-lg flex items-center justify-center space-x-2 ${
+                  className={`flex-1 py-3 px-6 rounded-lg text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 ${
                     isOutOfStock
                       ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed border border-zinc-700'
-                      : 'bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F]'
+                      : 'bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-[1.02] active:scale-95 hover:shadow-gold-glow text-[#24150F]'
                   }`}
                 >
                   {added ? (

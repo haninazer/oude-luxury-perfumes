@@ -123,7 +123,7 @@ export default function Shop() {
                 placeholder="Search notes, categories, character..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/50 pl-10 pr-4 py-2.5 text-xs rounded-lg border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/50 pl-10 pr-4 py-2.5 text-xs rounded-lg border border-[#B58A4F]/30 hover:border-[#B58A4F]/70 focus:border-[#D4AF37] focus:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all focus:outline-none"
               />
             </div>
 
@@ -140,7 +140,7 @@ export default function Shop() {
                   step="200"
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(Number(e.target.value))}
-                  className="w-24 sm:w-32 accent-[#B58A4F]"
+                  className="w-24 sm:w-32 accent-[#B58A4F] hover:accent-[#D4AF37] cursor-pointer transition-all"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export default function Shop() {
                 <select
                   value={sortBy}
                   onChange={handleSortChange}
-                  className="bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg text-xs border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                  className="bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg text-xs border border-[#B58A4F]/30 hover:border-[#D4AF37] focus:outline-none focus:border-[#D4AF37] cursor-pointer transition-colors"
                 >
                   <option value="featured">Featured Collection</option>
                   <option value="price_asc">Price: Low to High</option>
@@ -164,9 +164,9 @@ export default function Shop() {
               {hasActiveFilters && (
                 <button
                   onClick={handleResetFilters}
-                  className="text-xs text-[#D8B995]/70 hover:text-[#B58A4F] flex items-center space-x-1"
+                  className="text-xs text-[#D8B995]/70 hover:text-[#D4AF37] hover:scale-105 flex items-center space-x-1 transition-all"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="w-3.5 h-3.5 hover:rotate-180 transition-transform duration-500" />
                   <span>Reset</span>
                 </button>
               )}
@@ -180,10 +180,10 @@ export default function Shop() {
             </span>
             <button
               onClick={() => handleCategoryChange('All')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all duration-200 hover:scale-105 active:scale-95 ${
                 currentCategory === 'All'
                   ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow-gold-glow'
-                  : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
+                  : 'bg-[#352014] text-[#D8B995] hover:bg-[#B58A4F]/20 hover:text-[#D4AF37] hover:border-[#D4AF37] border border-[#B58A4F]/30'
               }`}
             >
               All Scents (7)
@@ -192,10 +192,10 @@ export default function Shop() {
               <button
                 key={c.category}
                 onClick={() => handleCategoryChange(c.category)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all duration-200 hover:scale-105 active:scale-95 ${
                   currentCategory === c.category
                     ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow-gold-glow'
-                    : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
+                    : 'bg-[#352014] text-[#D8B995] hover:bg-[#B58A4F]/20 hover:text-[#D4AF37] hover:border-[#D4AF37] border border-[#B58A4F]/30'
                 }`}
               >
                 {c.category} ({c.count})

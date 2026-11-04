@@ -67,7 +67,7 @@ export default function FragrancePyramid({ topNotes = '', heartNotes = '', baseN
           className={`w-1/2 mx-auto block py-2.5 px-3 rounded-t-lg text-center text-xs font-serif font-semibold tracking-wider transition-all duration-300 ${
             activeTier === 'top'
               ? 'bg-gradient-to-r from-[#D8B995] to-[#B58A4F] text-[#24150F] shadow-gold-glow scale-105'
-              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
+              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/90 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-102 border border-[#B58A4F]/30'
           }`}
         >
           ▲ Top Notes (Opening)
@@ -79,7 +79,7 @@ export default function FragrancePyramid({ topNotes = '', heartNotes = '', baseN
           className={`w-3/4 mx-auto block py-3 px-4 text-center text-xs font-serif font-bold tracking-wider transition-all duration-300 ${
             activeTier === 'heart'
               ? 'bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] text-[#24150F] shadow-gold-glow scale-105'
-              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
+              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/90 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-102 border border-[#B58A4F]/30'
           }`}
         >
           ✦ Heart Notes (The Soul)
@@ -91,7 +91,7 @@ export default function FragrancePyramid({ topNotes = '', heartNotes = '', baseN
           className={`w-full block py-3.5 px-4 rounded-b-lg text-center text-xs font-serif font-bold tracking-wider transition-all duration-300 ${
             activeTier === 'base'
               ? 'bg-gradient-to-r from-[#936C38] to-[#B58A4F] text-[#24150F] shadow-gold-glow scale-105'
-              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
+              : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/90 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-102 border border-[#B58A4F]/30'
           }`}
         >
           ▼ Base Notes (The Drydown & Sillage)

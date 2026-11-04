@@ -125,19 +125,19 @@ export default function ProductDetail() {
 
             {/* Value Guarantees */}
             <div className="grid grid-cols-3 gap-3 text-center text-xs text-[#F3E5D2]">
-              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
-                <Truck className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">Free Courier</span>
+              <div className="p-4 bg-[#24150F] hover:bg-[#352014] rounded-2xl border border-[#B58A4F]/30 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default group">
+                <Truck className="w-4 h-4 text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-125 transition-all mx-auto mb-1" />
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2] group-hover:text-[#D4AF37] transition-colors">Free Courier</span>
                 <span className="text-[10px] text-[#D8B995]/70">On orders over ₹3,000</span>
               </div>
-              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
-                <Sparkles className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">Complimentary Sample</span>
+              <div className="p-4 bg-[#24150F] hover:bg-[#352014] rounded-2xl border border-[#B58A4F]/30 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default group">
+                <Sparkles className="w-4 h-4 text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-125 transition-all mx-auto mb-1" />
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2] group-hover:text-[#D4AF37] transition-colors">Complimentary Sample</span>
                 <span className="text-[10px] text-[#D8B995]/70">Try before unsealing</span>
               </div>
-              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
-                <ShieldCheck className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">100% Authentic</span>
+              <div className="p-4 bg-[#24150F] hover:bg-[#352014] rounded-2xl border border-[#B58A4F]/30 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default group">
+                <ShieldCheck className="w-4 h-4 text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-125 transition-all mx-auto mb-1" />
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2] group-hover:text-[#D4AF37] transition-colors">100% Authentic</span>
                 <span className="text-[10px] text-[#D8B995]/70">Hand-finished seals</span>
               </div>
             </div>
@@ -239,11 +239,11 @@ export default function ProductDetail() {
             <div className="space-y-3 pt-2">
               <div className="flex items-center space-x-4">
                 {/* Quantity picker */}
-                <div className="flex items-center bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-xl px-4 py-3 space-x-4">
+                <div className="flex items-center bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 hover:border-[#D4AF37] transition-colors rounded-xl px-4 py-3 space-x-4">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1 || isOutOfStock}
-                    className="text-[#D8B995] hover:text-[#B58A4F] disabled:opacity-30"
+                    className="text-[#D8B995] hover:text-[#D4AF37] hover:scale-125 transition-all disabled:opacity-30"
                   >
                     -
                   </button>
@@ -251,7 +251,7 @@ export default function ProductDetail() {
                   <button
                     onClick={() => setQuantity(quantity + 1)}
                     disabled={quantity >= product.stock || isOutOfStock}
-                    className="text-[#D8B995] hover:text-[#B58A4F] disabled:opacity-30"
+                    className="text-[#D8B995] hover:text-[#D4AF37] hover:scale-125 transition-all disabled:opacity-30"
                   >
                     +
                   </button>
@@ -261,10 +261,10 @@ export default function ProductDetail() {
                 <button
                   onClick={handleAddToCart}
                   disabled={isOutOfStock || cartLoading}
-                  className={`flex-1 py-4 px-6 rounded-xl text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center space-x-2 ${
+                  className={`flex-1 py-4 px-6 rounded-xl text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 ${
                     isOutOfStock
                       ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed border border-zinc-700'
-                      : 'bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] border border-[#B58A4F]'
+                      : 'bg-[#24150F] hover:bg-[#352014] hover:border-[#D4AF37] hover:scale-[1.02] active:scale-95 text-[#F3E5D2] border border-[#B58A4F] hover:shadow-gold-glow'
                   }`}
                 >
                   <ShoppingBag className="w-4 h-4 text-[#B58A4F]" />
@@ -276,7 +276,7 @@ export default function ProductDetail() {
               {!isOutOfStock && (
                 <button
                   onClick={handleBuyNow}
-                  className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow transition-all"
+                  className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-[1.02] active:scale-95 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] transition-all duration-300"
                 >
                   Instant White-Glove Checkout • ₹{(Number(product.price) * quantity).toLocaleString('en-IN')}
                 </button>

@@ -132,13 +132,13 @@ export default function CartDrawer() {
                       <Link
                         to={`/product/${item.product_id}`}
                         onClick={() => setIsCartOpen(false)}
-                        className="font-serif text-base font-medium text-[#F3E5D2] hover:text-[#B58A4F] transition-colors truncate"
+                        className="font-serif text-base font-medium text-[#F3E5D2] hover:text-[#D4AF37] transition-colors truncate"
                       >
                         {item.name}
                       </Link>
                       <button
                         onClick={() => removeFromCart(item.product_id)}
-                        className="text-[#D8B995]/50 hover:text-red-400 p-1 transition-colors"
+                        className="text-[#D8B995]/50 hover:text-red-400 hover:scale-120 p-1 transition-all"
                         title="Remove item"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -261,23 +261,23 @@ export default function CartDrawer() {
                 <button
                   onClick={handleProceedCheckout}
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] py-3 rounded text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-[1.02] active:scale-95 text-[#24150F] py-3.5 rounded-lg text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-gold-glow flex items-center justify-center space-x-2 group"
                 >
                   <span>Proceed to Luxury Checkout</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <div className="flex justify-between text-[11px] text-[#D8B995]/70 pt-1">
                   <button
                     onClick={clearCart}
-                    className="hover:text-red-400 transition-colors"
+                    className="hover:text-red-400 hover:underline transition-colors"
                   >
                     Clear Bag
                   </button>
                   <Link
                     to="/shop"
                     onClick={() => setIsCartOpen(false)}
-                    className="hover:text-[#B58A4F] transition-colors"
+                    className="hover:text-[#D4AF37] hover:underline transition-colors"
                   >
                     Continue Browsing
                   </Link>

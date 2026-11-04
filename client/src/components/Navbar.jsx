@@ -114,7 +114,7 @@ export default function Navbar({ onOpenQuiz }) {
         {/* Brand Logo: OUDÉ */}
         <Link to="/" className="flex items-center group">
           <span
-            className={`font-serif text-2xl sm:text-3xl font-semibold tracking-[0.28em] transition-colors ${textColor}`}
+            className={`font-serif text-2xl sm:text-3xl font-semibold tracking-[0.28em] group-hover:tracking-[0.32em] group-hover:text-[#D4AF37] transition-all duration-300 ${textColor}`}
           >
             OUDÉ
           </span>
@@ -124,10 +124,10 @@ export default function Navbar({ onOpenQuiz }) {
         <nav className="hidden md:flex items-center space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
           <Link
             to="/"
-            className={`transition-colors relative py-1 ${
+            className={`transition-all duration-200 relative py-1 hover:-translate-y-0.5 hover:text-[#D4AF37] ${
               location.pathname === '/'
                 ? `${textColor} font-semibold border-b ${isTransparent ? 'border-[#24150F]' : 'border-[#B58A4F]'}`
-                : `${textColor}/80 hover:${textColor}`
+                : `${textColor}/80`
             }`}
           >
             HOME
@@ -135,10 +135,10 @@ export default function Navbar({ onOpenQuiz }) {
 
           <Link
             to="/shop"
-            className={`transition-colors relative py-1 ${
+            className={`transition-all duration-200 relative py-1 hover:-translate-y-0.5 hover:text-[#D4AF37] ${
               location.pathname === '/shop'
                 ? `${textColor} font-semibold border-b border-[#B58A4F]`
-                : `${textColor}/80 hover:${textColor}`
+                : `${textColor}/80`
             }`}
           >
             COLLECTION
@@ -146,14 +146,14 @@ export default function Navbar({ onOpenQuiz }) {
 
           <button
             onClick={() => scrollToSection('story')}
-            className={`transition-colors py-1 ${textColor}/80 hover:${textColor}`}
+            className={`transition-all duration-200 py-1 hover:-translate-y-0.5 hover:text-[#D4AF37] ${textColor}/80`}
           >
             OUR STORY
           </button>
 
           <button
             onClick={() => scrollToSection('contact')}
-            className={`transition-colors py-1 ${textColor}/80 hover:${textColor}`}
+            className={`transition-all duration-200 py-1 hover:-translate-y-0.5 hover:text-[#D4AF37] ${textColor}/80`}
           >
             CONTACT
           </button>
@@ -166,7 +166,7 @@ export default function Navbar({ onOpenQuiz }) {
           <div className="relative" ref={searchRef}>
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className={`p-1.5 transition-colors ${textColor}/85 hover:${textColor}`}
+              className={`p-1.5 transition-all duration-200 hover:scale-115 hover:text-[#D4AF37] ${textColor}/85`}
               aria-label="Search"
             >
               <Search className="w-5 h-5 stroke-[1.75]" />
@@ -235,9 +235,9 @@ export default function Navbar({ onOpenQuiz }) {
               <div>
                 <button
                   onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className={`flex items-center space-x-1.5 p-1 transition-colors ${textColor}`}
+                  className={`flex items-center space-x-1.5 p-1 transition-all duration-200 hover:scale-105 hover:text-[#D4AF37] ${textColor}`}
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#B58A4F]/25 border border-[#B58A4F] flex items-center justify-center font-serif text-xs font-bold">
+                  <div className="w-6 h-6 rounded-full bg-[#B58A4F]/25 border border-[#B58A4F] flex items-center justify-center font-serif text-xs font-bold hover:border-[#D4AF37] hover:bg-[#B58A4F]/40 transition-colors">
                     {user.name.charAt(0).toUpperCase()}
                   </div>
                   <ChevronDown className="w-3.5 h-3.5" />
@@ -251,7 +251,7 @@ export default function Navbar({ onOpenQuiz }) {
                     </div>
                     <Link
                       to="/profile"
-                      className="flex items-center space-x-2 px-4 py-2 hover:bg-[#352014] text-[#D8B995] hover:text-[#B58A4F]"
+                      className="flex items-center space-x-2 px-4 py-2.5 hover:bg-[#352014] hover:text-[#D4AF37] hover:translate-x-1 text-[#D8B995] transition-all duration-200"
                     >
                       <User className="w-4 h-4" />
                       <span>My Profile & Orders</span>
@@ -259,7 +259,7 @@ export default function Navbar({ onOpenQuiz }) {
                     {isAdmin && (
                       <Link
                         to="/admin"
-                        className="flex items-center space-x-2 px-4 py-2 hover:bg-[#352014] text-[#D4AF37] font-semibold"
+                        className="flex items-center space-x-2 px-4 py-2.5 hover:bg-[#352014] hover:text-[#D4AF37] hover:translate-x-1 text-[#D4AF37] font-semibold transition-all duration-200"
                       >
                         <Shield className="w-4 h-4" />
                         <span>Admin Dashboard</span>
@@ -267,7 +267,7 @@ export default function Navbar({ onOpenQuiz }) {
                     )}
                     <button
                       onClick={logout}
-                      className="w-full flex items-center space-x-2 px-4 py-2 text-red-400 hover:bg-[#352014] text-left border-t border-[#B58A4F]/20 mt-1"
+                      className="w-full flex items-center space-x-2 px-4 py-2.5 text-red-400 hover:bg-red-950/40 hover:translate-x-1 text-left border-t border-[#B58A4F]/20 mt-1 transition-all duration-200"
                     >
                       <LogOut className="w-4 h-4" />
                       <span>Sign Out</span>
@@ -278,7 +278,7 @@ export default function Navbar({ onOpenQuiz }) {
             ) : (
               <Link
                 to="/login"
-                className={`p-1.5 transition-colors ${textColor}/85 hover:${textColor}`}
+                className={`p-1.5 transition-all duration-200 hover:scale-115 hover:text-[#D4AF37] ${textColor}/85`}
                 title="Account"
               >
                 <User className="w-5 h-5 stroke-[1.75]" />
@@ -289,12 +289,12 @@ export default function Navbar({ onOpenQuiz }) {
           {/* Shopping Bag Button with Exact Badge Count */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className={`relative p-1.5 transition-transform hover:scale-105 ${textColor}`}
+            className={`group relative p-1.5 transition-all duration-200 hover:scale-115 hover:text-[#D4AF37] ${textColor}`}
             aria-label="View Shopping Bag"
           >
-            <ShoppingBag className="w-5 h-5 stroke-[1.75]" />
+            <ShoppingBag className="w-5 h-5 stroke-[1.75] group-hover:rotate-6 transition-transform" />
             <span
-              className={`absolute -top-1 -right-1 text-[10px] font-bold font-mono rounded-full w-4 h-4 flex items-center justify-center ${
+              className={`absolute -top-1 -right-1 text-[10px] font-bold font-mono rounded-full w-4 h-4 flex items-center justify-center group-hover:scale-110 transition-transform ${
                 isTransparent
                   ? 'bg-[#24150F] text-[#F3E5D2]'
                   : 'bg-[#B58A4F] text-[#24150F]'

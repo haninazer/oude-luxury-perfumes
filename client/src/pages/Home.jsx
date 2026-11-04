@@ -85,17 +85,17 @@ export default function Home({ onOpenQuiz }) {
             <div className="pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
               <Link
                 to="/shop"
-                className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-gold-glow"
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-[0_8px_30px_rgba(181,138,79,0.45)] hover:scale-105 hover:border hover:border-[#D4AF37]/60"
               >
                 <span>DISCOVER THE COLLECTION</span>
-                <ArrowUpRight className="w-4 h-4 text-[#D8B995] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 text-[#D8B995] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#D4AF37] transition-all" />
               </Link>
 
               <button
                 onClick={onOpenQuiz}
-                className="inline-flex items-center space-x-2 px-6 py-4 bg-[#24150F]/15 hover:bg-[#24150F]/25 text-[#24150F] border border-[#24150F]/40 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-semibold transition-all"
+                className="inline-flex items-center space-x-2 px-6 py-4 bg-[#24150F]/15 hover:bg-[#24150F]/30 hover:border-[#24150F] hover:scale-105 text-[#24150F] border border-[#24150F]/40 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow hover:shadow-lg active:scale-95"
               >
-                <Compass className="w-3.5 h-3.5 text-[#352014]" />
+                <Compass className="w-3.5 h-3.5 text-[#352014] hover:rotate-45 transition-transform" />
                 <span>Scent Profiler</span>
               </button>
             </div>
@@ -164,49 +164,49 @@ export default function Home({ onOpenQuiz }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
             
             {/* Pillar 1: Rare Agarwood */}
-            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] hover:bg-[#24150F]/95 hover:shadow-[0_15px_40px_rgba(212,175,55,0.25)] transition-all duration-300 group hover:-translate-y-2 cursor-default">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-115 group-hover:rotate-6 group-hover:bg-[#B58A4F] group-hover:text-[#24150F] transition-all">
                 <Flame className="w-6 h-6" />
               </div>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1 group-hover:text-[#D4AF37] transition-colors">
                 Raw Heartwood Essence
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2 group-hover:text-[#D4AF37] transition-colors">
                 Aged Cambodian Oud
               </h3>
-              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed group-hover:text-[#F3E5D2] transition-colors">
                 Extracted from ancient resinous agarwood trees, aged in sealed glass vessels for rich balsamic warmth, smoke, and majestic authority.
               </p>
             </div>
 
             {/* Pillar 2: Dawn Distillates */}
-            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] hover:bg-[#24150F]/95 hover:shadow-[0_15px_40px_rgba(212,175,55,0.25)] transition-all duration-300 group hover:-translate-y-2 cursor-default">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-115 group-hover:rotate-6 group-hover:bg-[#B58A4F] group-hover:text-[#24150F] transition-all">
                 <Droplets className="w-6 h-6" />
               </div>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1 group-hover:text-[#D4AF37] transition-colors">
                 Floral Royalty
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2 group-hover:text-[#D4AF37] transition-colors">
                 Taif & Damask Roses
               </h3>
-              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed group-hover:text-[#F3E5D2] transition-colors">
                 Harvested by hand in the cool mountain dawn to preserve volatile dew petals, lending velvet romance and golden sweetness.
               </p>
             </div>
 
             {/* Pillar 3: 16+ Hours Extrait */}
-            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] hover:bg-[#24150F]/95 hover:shadow-[0_15px_40px_rgba(212,175,55,0.25)] transition-all duration-300 group hover:-translate-y-2 cursor-default">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-115 group-hover:rotate-6 group-hover:bg-[#B58A4F] group-hover:text-[#24150F] transition-all">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1 group-hover:text-[#D4AF37] transition-colors">
                 Uncompromising Potency
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2 group-hover:text-[#D4AF37] transition-colors">
                 28% Extrait Concentration
               </h3>
-              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed group-hover:text-[#F3E5D2] transition-colors">
                 Formulated at the highest concentration grade in fine perfumery, guaranteeing an unforgettable royal sillage that endures past sunset.
               </p>
             </div>
@@ -217,17 +217,17 @@ export default function Home({ onOpenQuiz }) {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={scrollToCollection}
-              className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-serif text-xs uppercase tracking-[0.22em] font-bold rounded-lg shadow-gold-glow transition-all flex items-center space-x-2"
+              className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-105 active:scale-95 text-[#24150F] font-serif text-xs uppercase tracking-[0.22em] font-bold rounded-lg shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] transition-all flex items-center space-x-2 group"
             >
               <span>Explore The Seven Scents</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
               onClick={onOpenQuiz}
-              className="px-8 py-4 bg-[#24150F]/80 hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/50 font-serif text-xs uppercase tracking-[0.2em] font-medium rounded-lg backdrop-blur-md transition-all flex items-center space-x-2"
+              className="px-8 py-4 bg-[#24150F]/80 hover:bg-[#352014] hover:border-[#D4AF37] hover:scale-105 active:scale-95 text-[#F3E5D2] hover:text-[#D4AF37] border border-[#B58A4F]/50 font-serif text-xs uppercase tracking-[0.2em] font-medium rounded-lg backdrop-blur-md transition-all flex items-center space-x-2"
             >
-              <Compass className="w-4 h-4 text-[#D4AF37]" />
+              <Compass className="w-4 h-4 text-[#D4AF37] hover:rotate-45 transition-transform" />
               <span>Take Scent Profiler Quiz</span>
             </button>
           </div>
@@ -272,10 +272,10 @@ export default function Home({ onOpenQuiz }) {
           <div className="text-center mt-14">
             <Link
               to="/shop"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#B58A4F] hover:bg-[#D4AF37] text-[#24150F] text-xs font-serif uppercase tracking-[0.2em] font-bold transition-all shadow-gold-glow"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#B58A4F] hover:bg-[#D4AF37] hover:scale-105 active:scale-95 text-[#24150F] text-xs font-serif uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.45)] group"
             >
               <span>Explore All 7 Fragrances & Filter Notes</span>
-              <ArrowRight className="w-4 h-4 text-[#24150F]" />
+              <ArrowRight className="w-4 h-4 text-[#24150F] group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -287,15 +287,15 @@ export default function Home({ onOpenQuiz }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Visual Flacon Feature */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative group">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#B58A4F]/40 shadow-2xl bg-[#352014]">
                 <img
                   src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop"
                   alt="Arabian Perfume Heritage"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:block bg-[#352014] p-5 rounded-2xl border border-[#B58A4F]/50 shadow-2xl max-w-xs">
+              <div className="absolute -bottom-6 -right-6 hidden sm:block bg-[#352014] p-5 rounded-2xl border border-[#B58A4F]/50 shadow-2xl max-w-xs hover:border-[#D4AF37] hover:scale-105 transition-all duration-300">
                 <p className="font-serif text-[#D4AF37] font-bold text-sm">28% Extrait Concentration</p>
                 <p className="text-xs text-[#D8B995]/80 mt-1">
                   Aged Cambodian agarwood and Taif rose oils matured in darkness for unmatched longevity.
@@ -320,17 +320,17 @@ export default function Home({ onOpenQuiz }) {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#B58A4F]/20 text-xs">
-                <div className="p-4 bg-[#352014]/60 rounded-xl border border-[#B58A4F]/20">
-                  <span className="text-[#B58A4F] font-serif font-bold text-sm block">Rare Oud Woods</span>
-                  <span className="text-[#D8B995]/70">Harvested from deep natural resinous heartwood.</span>
+                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
+                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">Rare Oud Woods</span>
+                  <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Harvested from deep natural resinous heartwood.</span>
                 </div>
-                <div className="p-4 bg-[#352014]/60 rounded-xl border border-[#B58A4F]/20">
-                  <span className="text-[#B58A4F] font-serif font-bold text-sm block">Hand-Sealed</span>
-                  <span className="text-[#D8B995]/70">Finished with golden brass flacon filigree.</span>
+                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
+                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">Hand-Sealed</span>
+                  <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Finished with golden brass flacon filigree.</span>
                 </div>
-                <div className="p-4 bg-[#352014]/60 rounded-xl border border-[#B58A4F]/20">
-                  <span className="text-[#B58A4F] font-serif font-bold text-sm block">16+ Hours</span>
-                  <span className="text-[#D8B995]/70">Tested longevity on skin and fabrics.</span>
+                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
+                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">16+ Hours</span>
+                  <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Tested longevity on skin and fabrics.</span>
                 </div>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function Home({ onOpenQuiz }) {
       {/* 5. SCENT QUIZ PROFILER CALLOUT */}
       <section id="quiz" className="w-full bg-[#24150F] py-20 border-t border-[#B58A4F]/20">
         <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-14 text-center">
-          <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 shadow-2xl text-[#F3E5D2] relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 hover:border-[#D4AF37]/60 shadow-2xl text-[#F3E5D2] relative overflow-hidden transition-all duration-300 hover:shadow-[0_15px_40px_rgba(212,175,55,0.2)]">
             <div className="relative z-10 max-w-xl mx-auto space-y-4">
               <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
                 Sensory Diagnostics
@@ -356,7 +356,7 @@ export default function Home({ onOpenQuiz }) {
               <div className="pt-4">
                 <button
                   onClick={onOpenQuiz}
-                  className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-full shadow-gold-glow transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-105 active:scale-95 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-full shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] transition-all"
                 >
                   Start Scent Quiz (60 Seconds)
                 </button>

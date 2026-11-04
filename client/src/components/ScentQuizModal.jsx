@@ -140,7 +140,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#D8B995]/70 hover:text-[#B58A4F] p-1.5 rounded transition-colors"
+          className="absolute top-4 right-4 text-[#D8B995]/70 hover:text-[#D4AF37] hover:scale-120 p-1.5 rounded transition-all z-20"
         >
           <X className="w-5 h-5" />
         </button>
@@ -178,17 +178,17 @@ export default function ScentQuizModal({ isOpen, onClose }) {
                 <button
                   key={i}
                   onClick={() => handleSelectOption(i)}
-                  className="w-full text-left p-4 rounded-xl bg-[#352014]/60 hover:bg-[#352014] border border-[#B58A4F]/20 hover:border-[#B58A4F] transition-all group flex items-start justify-between"
+                  className="w-full text-left p-4 rounded-xl bg-[#352014]/60 hover:bg-[#352014] border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:scale-[1.01] hover:shadow-lg transition-all duration-200 group flex items-start justify-between cursor-pointer"
                 >
                   <div>
-                    <p className="font-serif text-base font-semibold text-[#F3E5D2] group-hover:text-[#B58A4F] transition-colors">
+                    <p className="font-serif text-base font-semibold text-[#F3E5D2] group-hover:text-[#D4AF37] transition-colors">
                       {opt.label}
                     </p>
                     {opt.desc && (
-                      <p className="text-xs text-[#D8B995]/70 mt-0.5">{opt.desc}</p>
+                      <p className="text-xs text-[#D8B995]/70 mt-0.5 group-hover:text-[#D8B995] transition-colors">{opt.desc}</p>
                     )}
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#B58A4F] opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-[#B58A4F] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-[#D4AF37] transition-all mt-1 flex-shrink-0" />
                 </button>
               ))}
             </div>
