@@ -108,15 +108,15 @@ export default function Checkout() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-[75vh] bg-[#24150F] flex items-center justify-center px-4 pt-20">
-        <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4 shadow-xl">
-          <p className="font-serif text-2xl">Your Bag is Empty</p>
-          <p className="text-xs text-[#D8B995]/70">
+      <div className="min-h-[75vh] luxury-canvas-bg flex items-center justify-center px-4 pt-24">
+        <div className="luxury-glass-panel text-[#F3E5D2] p-10 rounded-3xl border border-[#D4AF37]/35 max-w-md text-center space-y-5 shadow-2xl">
+          <p className="font-serif text-3xl font-bold gold-foil-text">Your Bag is Empty</p>
+          <p className="text-xs text-[#D8B995]/80 leading-relaxed">
             Select at least one perfume from our collection before proceeding to checkout.
           </p>
           <Link
             to="/shop"
-            className="inline-block px-6 py-3 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-gold-glow"
+            className="inline-block px-8 py-3.5 btn-gold-embossed text-xs font-serif uppercase tracking-widest font-bold rounded-xl shadow-2xl"
           >
             Explore Fragrances
           </Link>
@@ -126,20 +126,23 @@ export default function Checkout() {
   }
 
   return (
-    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] pb-24 pt-20">
+    <div className="luxury-canvas-bg min-h-screen text-[#F3E5D2] pb-28 pt-24 relative overflow-hidden">
+      {/* Ambient Top Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-56 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,transparent_70%)] pointer-events-none" />
+
       {/* Header */}
-      <div className="bg-[#24150F] text-[#F3E5D2] py-8 border-b border-[#B58A4F]/30">
+      <div className="bg-[#100704]/90 backdrop-blur-md text-[#F3E5D2] py-8 border-b border-[#D4AF37]/20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Link to="/shop" className="text-[#D8B995] hover:text-[#B58A4F] text-xs flex items-center space-x-1">
+            <Link to="/shop" className="text-[#D8B995] hover:text-[#D4AF37] text-xs flex items-center space-x-1.5 transition-colors">
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Store</span>
             </Link>
-            <span className="text-[#B58A4F]">/</span>
-            <span className="font-serif text-lg font-semibold tracking-wider">White-Glove Luxury Checkout</span>
+            <span className="text-[#D4AF37]/40">/</span>
+            <span className="font-serif text-lg font-semibold tracking-wider gold-foil-text">White-Glove Luxury Checkout</span>
           </div>
-          <div className="flex items-center space-x-2 text-xs text-[#D8B995]/70">
-            <Lock className="w-4 h-4 text-[#B58A4F]" />
+          <div className="flex items-center space-x-2 text-xs text-[#D8B995]/80">
+            <Lock className="w-4 h-4 text-[#D4AF37]" />
             <span>256-Bit SSL Encrypted</span>
           </div>
         </div>
@@ -159,14 +162,14 @@ export default function Checkout() {
           <div className="lg:col-span-7 space-y-8">
             
             {/* 1. Client Contact & Delivery Address */}
-            <div className="bg-[#24150F] text-[#F3E5D2] p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/30 shadow-xl space-y-6">
-              <div className="flex justify-between items-center pb-3 border-b border-[#B58A4F]/20">
-                <h2 className="font-serif text-xl font-bold flex items-center space-x-2">
-                  <span className="w-6 h-6 rounded-full bg-[#B58A4F] text-[#24150F] text-xs font-mono font-bold flex items-center justify-center">1</span>
+            <div className="luxury-glass-panel text-[#F3E5D2] p-6 sm:p-8 rounded-3xl border border-[#D4AF37]/30 shadow-2xl space-y-6">
+              <div className="flex justify-between items-center pb-3 border-b border-[#D4AF37]/20">
+                <h2 className="font-serif text-xl font-bold flex items-center space-x-3 gold-foil-text">
+                  <span className="w-7 h-7 rounded-full bg-[#D4AF37] text-[#1A0D07] text-xs font-mono font-bold flex items-center justify-center shadow">1</span>
                   <span>Delivery Address</span>
                 </h2>
                 {!isAuthenticated && (
-                  <Link to="/login" className="text-xs text-[#B58A4F] hover:underline">
+                  <Link to="/login" className="text-xs text-[#D4AF37] hover:underline font-serif">
                     Have an account? Sign In
                   </Link>
                 )}
@@ -264,10 +267,10 @@ export default function Checkout() {
             </div>
 
             {/* 2. Payment Method */}
-            <div className="bg-[#24150F] text-[#F3E5D2] p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/30 shadow-xl space-y-4">
-              <div className="pb-3 border-b border-[#B58A4F]/20">
-                <h2 className="font-serif text-xl font-bold flex items-center space-x-2">
-                  <span className="w-6 h-6 rounded-full bg-[#B58A4F] text-[#24150F] text-xs font-mono font-bold flex items-center justify-center">2</span>
+            <div className="luxury-glass-panel text-[#F3E5D2] p-6 sm:p-8 rounded-3xl border border-[#D4AF37]/30 shadow-xl space-y-4">
+              <div className="pb-3 border-b border-[#D4AF37]/20">
+                <h2 className="font-serif text-xl font-bold flex items-center space-x-3 gold-foil-text">
+                  <span className="w-7 h-7 rounded-full bg-[#D4AF37] text-[#1A0D07] text-xs font-mono font-bold flex items-center justify-center shadow">2</span>
                   <span>Payment Gateway (Simulated)</span>
                 </h2>
                 <p className="text-xs text-[#D8B995]/70 mt-1">
@@ -285,8 +288,8 @@ export default function Checkout() {
                     key={pm.id}
                     className={`flex items-start space-x-3 p-4 rounded-xl border cursor-pointer transition-all ${
                       formData.payment_method === pm.id
-                        ? 'bg-[#352014] border-[#B58A4F] shadow-gold-glow'
-                        : 'bg-[#352014]/40 border-[#B58A4F]/20 hover:border-[#B58A4F]/50'
+                        ? 'bg-[#180D07] border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+                        : 'bg-[#120804]/70 border-[#D4AF37]/20 hover:border-[#D4AF37]/50'
                     }`}
                   >
                     <input
@@ -295,7 +298,7 @@ export default function Checkout() {
                       value={pm.id}
                       checked={formData.payment_method === pm.id}
                       onChange={handleChange}
-                      className="mt-1 accent-[#B58A4F]"
+                      className="mt-1 accent-[#D4AF37]"
                     />
                     <div>
                       <p className="font-serif font-bold text-sm text-[#F3E5D2]">{pm.label}</p>
@@ -310,11 +313,11 @@ export default function Checkout() {
 
           {/* Right Column: Server-Calculated Order Summary */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#24150F] text-[#F3E5D2] p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/30 shadow-2xl space-y-6 sticky top-28">
+            <div className="luxury-glass-panel text-[#F3E5D2] p-6 sm:p-8 rounded-3xl border border-[#D4AF37]/35 shadow-2xl space-y-6 sticky top-28">
               
-              <div className="pb-4 border-b border-[#B58A4F]/20 flex justify-between items-center">
-                <h2 className="font-serif text-xl font-bold">Order Summary</h2>
-                <span className="text-xs font-mono text-[#D4AF37]">{itemCount} item(s)</span>
+              <div className="pb-4 border-b border-[#D4AF37]/20 flex justify-between items-center">
+                <h2 className="font-serif text-xl font-bold gold-foil-text">Order Summary</h2>
+                <span className="text-xs font-mono text-[#D4AF37] bg-black/50 px-2.5 py-1 rounded-full border border-[#D4AF37]/30">{itemCount} item(s)</span>
               </div>
 
               {/* Items List */}
@@ -386,9 +389,9 @@ export default function Checkout() {
                     <span className="font-mono">-₹{discount.toLocaleString('en-IN')}</span>
                   </div>
                 )}
-                <div className="pt-3 border-t border-[#B58A4F]/30 flex justify-between items-center text-base font-bold text-[#F3E5D2]">
+                <div className="pt-3 border-t border-[#D4AF37]/30 flex justify-between items-center text-base font-bold text-[#F3E5D2]">
                   <span className="font-serif">Server Total</span>
-                  <span className="font-serif text-2xl text-[#D4AF37]">
+                  <span className="font-serif text-2xl font-bold gold-foil-text">
                     ₹{grandTotal.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -398,23 +401,23 @@ export default function Checkout() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow transition-all disabled:opacity-50 flex items-center justify-center space-x-2"
+                className="w-full py-4 btn-gold-embossed text-xs font-serif uppercase tracking-widest font-bold rounded-xl shadow-2xl transition-all disabled:opacity-50 flex items-center justify-center space-x-2"
               >
                 {loading ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-[#24150F] border-t-transparent rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-[#1A0D07] border-t-transparent rounded-full animate-spin" />
                     <span>Processing Order...</span>
                   </>
                 ) : (
                   <>
-                    <ShieldCheck className="w-4 h-4" />
+                    <ShieldCheck className="w-4 h-4 text-[#1A0D07]" />
                     <span>Complete Luxury Order • ₹{grandTotal.toLocaleString('en-IN')}</span>
                   </>
                 )}
               </button>
 
-              <div className="text-center text-[10px] text-[#D8B995]/60 flex items-center justify-center space-x-2">
-                <Truck className="w-3.5 h-3.5 text-[#B58A4F]" />
+              <div className="text-center text-[10px] text-[#D8B995]/70 flex items-center justify-center space-x-2">
+                <Truck className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Estimated Delivery: 2-3 Business Days Across India</span>
               </div>
 

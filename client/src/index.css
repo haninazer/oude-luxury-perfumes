@@ -44,21 +44,70 @@
   );
 }
 
-/* Subtle Shimmer Effect */
-.gold-shimmer-text {
-  background: linear-gradient(
-    90deg,
-    #B58A4F 0%,
-    #F7E7CE 25%,
-    #D4AF37 50%,
-    #F7E7CE 75%,
-    #B58A4F 100%
-  );
-  background-size: 200% auto;
-  color: transparent;
+/* Shimmer & Metallic Gold Foil Gradients */
+.gold-foil-text {
+  background: linear-gradient(135deg, #DFBA73 0%, #FFF3D1 30%, #C59B4B 60%, #9E742C 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  animation: shimmer 4s linear infinite;
+  color: transparent;
+}
+
+.gold-foil-subtext {
+  background: linear-gradient(135deg, #E8C9A8 0%, #FFF3D1 40%, #B58A4F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Atmospheric Haute Parfumerie Canvas */
+.luxury-canvas-bg {
+  background-color: #0B0604;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(181, 138, 79, 0.18) 0%, transparent 70%),
+    radial-gradient(circle 600px at 85% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 60%),
+    radial-gradient(circle 600px at 15% 70%, rgba(181, 138, 79, 0.05) 0%, transparent 60%);
+}
+
+/* Luxury Showcase Vitrine Card */
+.luxury-vitrine {
+  background: radial-gradient(circle at 50% 30%, rgba(181, 138, 79, 0.12) 0%, rgba(24, 13, 8, 0.9) 65%, rgba(12, 6, 3, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 230, 180, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-vitrine:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 230, 180, 0.3);
+}
+
+/* Glassmorphic Control Toolbar */
+.luxury-glass-panel {
+  background: rgba(18, 10, 6, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 230, 180, 0.12);
+}
+
+/* Metallic 24K Embossed Button */
+.btn-gold-embossed {
+  background: linear-gradient(135deg, #DFBA73 0%, #F5E6C4 45%, #C59B4B 80%, #9E742C 100%);
+  color: #1A0D07;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold-embossed:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn-gold-embossed:active {
+  transform: scale(0.98);
 }
 
 /* Luxury Glassmorphism */

@@ -235,18 +235,32 @@ export default function Home({ onOpenQuiz }) {
         </div>
       </section>
 
-      {/* 3. THE SEVEN PERFUMES COLLECTION (MATCHING DARK LUXURY ARABIAN THEME) */}
-      <section id="collection" className="w-full bg-[#24150F] py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
-              The OUDÉ Fragrance Anthology
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#F3E5D2]">
+      {/* 3. THE SEVEN PERFUMES COLLECTION (IMPERIAL OBSIDIAN & 24K GOLD VITRINES) */}
+      <section id="collection" className="w-full luxury-canvas-bg py-28 relative overflow-hidden border-t border-[#D4AF37]/20">
+        {/* Ambient Top Golden Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-56 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-black/60 border border-[#D4AF37]/40 shadow-lg backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-[11px] uppercase font-serif tracking-[0.28em] text-[#D4AF37] font-semibold">
+                THE OUDÉ FRAGRANCE ANTHOLOGY
+              </span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight gold-foil-text drop-shadow-[0_4px_24px_rgba(212,175,55,0.3)]">
               The Seven Iconic Creations
             </h2>
-            <div className="w-16 h-0.5 bg-[#B58A4F] mx-auto mt-2" />
-            <p className="text-sm text-[#D8B995]/80 font-light leading-relaxed">
+
+            {/* Ornate Gold Star Divider */}
+            <div className="flex items-center justify-center space-x-3 my-4">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#D4AF37]" />
+              <span className="text-[#D4AF37] text-sm">✦</span>
+              <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#D4AF37]" />
+            </div>
+
+            <p className="text-sm sm:text-base text-[#D8B995]/90 font-light leading-relaxed max-w-2xl mx-auto">
               Each flacon represents a distinct olfactory odyssey—formulated with 28% Extrait de Parfum concentration for unyielding longevity and majestic sillage.
             </p>
           </div>
@@ -254,7 +268,7 @@ export default function Home({ onOpenQuiz }) {
           {/* Product Cards Grid */}
           {loading ? (
             <div className="py-20 text-center">
-              <div className="w-10 h-10 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
+              <div className="w-10 h-10 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
               <p className="font-serif text-sm text-[#D8B995] mt-3">Curating the Fragrances...</p>
             </div>
           ) : (
@@ -269,34 +283,38 @@ export default function Home({ onOpenQuiz }) {
             </div>
           )}
 
-          <div className="text-center mt-14">
+          <div className="text-center mt-16">
             <Link
               to="/shop"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#B58A4F] hover:bg-[#D4AF37] hover:scale-105 active:scale-95 text-[#24150F] text-xs font-serif uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.45)] group"
+              className="inline-flex items-center space-x-3 px-10 py-4 btn-gold-embossed text-xs font-serif uppercase tracking-[0.22em] font-bold rounded-xl shadow-2xl group"
             >
               <span>Explore All 7 Fragrances & Filter Notes</span>
-              <ArrowRight className="w-4 h-4 text-[#24150F] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A0D07] group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* 4. OUR STORY SECTION */}
-      <section id="story" className="bg-[#24150F] text-[#F3E5D2] py-24 border-y border-[#B58A4F]/30 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+      <section id="story" className="bg-[#0C0604] text-[#F3E5D2] py-28 border-y border-[#D4AF37]/25 relative overflow-hidden">
+        {/* Subtle radial ambient amber glow */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Visual Flacon Feature */}
             <div className="lg:col-span-5 relative group">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#B58A4F]/40 shadow-2xl bg-[#352014]">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#140A06] relative">
                 <img
-                  src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop"
+                  src="/products/oud-royal.jpg"
                   alt="Arabian Perfume Heritage"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0604] via-transparent to-transparent opacity-40 pointer-events-none" />
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:block bg-[#352014] p-5 rounded-2xl border border-[#B58A4F]/50 shadow-2xl max-w-xs hover:border-[#D4AF37] hover:scale-105 transition-all duration-300">
-                <p className="font-serif text-[#D4AF37] font-bold text-sm">28% Extrait Concentration</p>
+              <div className="absolute -bottom-6 -right-6 hidden sm:block bg-[#160B07]/90 backdrop-blur-md p-5 rounded-2xl border border-[#D4AF37]/50 shadow-2xl max-w-xs hover:border-[#D4AF37] hover:scale-105 transition-all duration-300">
+                <p className="font-serif gold-foil-text font-bold text-sm">28% Extrait Concentration</p>
                 <p className="text-xs text-[#D8B995]/80 mt-1">
                   Aged Cambodian agarwood and Taif rose oils matured in darkness for unmatched longevity.
                 </p>
@@ -305,13 +323,16 @@ export default function Home({ onOpenQuiz }) {
 
             {/* Narrative */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
+              <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#D4AF37] block">
                 Heritage & Alchemy
               </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-bold leading-tight text-[#F3E5D2]">
+              <h2 className="font-serif text-3xl sm:text-5xl font-bold leading-tight gold-foil-text">
                 Crafted in the Heart of Arabian Tradition
               </h2>
-              <div className="w-16 h-0.5 bg-[#B58A4F]" />
+              <div className="flex items-center space-x-3">
+                <div className="w-16 h-px bg-gradient-to-r from-[#D4AF37] to-transparent" />
+                <span className="text-[#D4AF37] text-xs">✦</span>
+              </div>
               <p className="text-sm text-[#D8B995]/90 leading-relaxed font-light">
                 In Arabian culture, fragrance is a timeless sacred rite—a gesture of hospitality, nobility, and presence. OUDÉ was founded to revive ancient spice trails and resin trade routes through modern olfactory mastery.
               </p>
@@ -319,17 +340,17 @@ export default function Home({ onOpenQuiz }) {
                 Every drop contains rare sustainably-harvested Cambodian agarwood, velvety Damascus rose distillates, golden frankincense from the Dhofar hills, and sun-warmed amber, creating scents that linger long after the wearer has departed.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#B58A4F]/20 text-xs">
-                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
-                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">Rare Oud Woods</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#D4AF37]/20 text-xs">
+                <div className="p-4 bg-[#140A06]/80 hover:bg-[#1A0E09] rounded-xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+                  <span className="text-[#D4AF37] group-hover:gold-foil-text font-serif font-bold text-sm block transition-colors">Rare Oud Woods</span>
                   <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Harvested from deep natural resinous heartwood.</span>
                 </div>
-                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
-                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">Hand-Sealed</span>
+                <div className="p-4 bg-[#140A06]/80 hover:bg-[#1A0E09] rounded-xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+                  <span className="text-[#D4AF37] group-hover:gold-foil-text font-serif font-bold text-sm block transition-colors">Hand-Sealed</span>
                   <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Finished with golden brass flacon filigree.</span>
                 </div>
-                <div className="p-4 bg-[#352014]/60 hover:bg-[#352014] rounded-xl border border-[#B58A4F]/20 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default group">
-                  <span className="text-[#B58A4F] group-hover:text-[#D4AF37] font-serif font-bold text-sm block transition-colors">16+ Hours</span>
+                <div className="p-4 bg-[#140A06]/80 hover:bg-[#1A0E09] rounded-xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+                  <span className="text-[#D4AF37] group-hover:gold-foil-text font-serif font-bold text-sm block transition-colors">16+ Hours</span>
                   <span className="text-[#D8B995]/70 group-hover:text-[#F3E5D2] transition-colors">Tested longevity on skin and fabrics.</span>
                 </div>
               </div>
@@ -340,23 +361,23 @@ export default function Home({ onOpenQuiz }) {
       </section>
 
       {/* 5. SCENT QUIZ PROFILER CALLOUT */}
-      <section id="quiz" className="w-full bg-[#24150F] py-20 border-t border-[#B58A4F]/20">
-        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-14 text-center">
-          <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 hover:border-[#D4AF37]/60 shadow-2xl text-[#F3E5D2] relative overflow-hidden transition-all duration-300 hover:shadow-[0_15px_40px_rgba(212,175,55,0.2)]">
+      <section id="quiz" className="w-full bg-[#080402] py-24 border-t border-[#D4AF37]/20 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-14 text-center relative z-10">
+          <div className="luxury-glass-panel rounded-3xl p-8 sm:p-14 border border-[#D4AF37]/40 hover:border-[#D4AF37] shadow-2xl text-[#F3E5D2] relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(212,175,55,0.25)]">
             <div className="relative z-10 max-w-xl mx-auto space-y-4">
-              <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
+              <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#D4AF37] block">
                 Sensory Diagnostics
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold gold-foil-text">
                 Find Your Signature Arabian Scent
               </h2>
-              <p className="text-xs sm:text-sm text-[#D8B995]/80 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#D8B995]/90 font-light leading-relaxed">
                 Answer 3 quick sensory questions about your personality, mood, and preferred sillage. Our olfactory engine will match you with your exact OUDÉ flacon.
               </p>
               <div className="pt-4">
                 <button
                   onClick={onOpenQuiz}
-                  className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-115 hover:scale-105 active:scale-95 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-full shadow-gold-glow hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] transition-all"
+                  className="px-10 py-4 btn-gold-embossed text-xs font-serif uppercase tracking-widest font-bold rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all"
                 >
                   Start Scent Quiz (60 Seconds)
                 </button>

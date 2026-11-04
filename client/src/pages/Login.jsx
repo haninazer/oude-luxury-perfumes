@@ -45,24 +45,27 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-[#24150F] text-[#F3E5D2] flex items-center justify-center px-4 py-24">
-      <div className="max-w-md w-full bg-[#24150F] text-[#F3E5D2] rounded-3xl border border-[#B58A4F]/35 shadow-2xl p-8 sm:p-10 space-y-6">
+    <div className="min-h-screen luxury-canvas-bg text-[#F3E5D2] flex items-center justify-center px-4 py-28 relative overflow-hidden">
+      {/* Ambient Top Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-56 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-md w-full luxury-glass-panel text-[#F3E5D2] rounded-3xl border border-[#D4AF37]/35 shadow-2xl p-8 sm:p-10 space-y-6 relative z-10">
         
         {/* Header */}
         <div className="text-center space-y-2">
-          <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block">
-            Client Authentication
+          <span className="text-[10px] uppercase font-serif tracking-[0.28em] text-[#D4AF37] block">
+            CLIENT AUTHENTICATION
           </span>
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-[#F3E5D2]">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight gold-foil-text">
             Welcome Back to OUDÉ
           </h1>
-          <p className="text-xs text-[#D8B995]/70 font-light">
+          <p className="text-xs text-[#D8B995]/80 font-light">
             Sign in to access your personal fragrance bag and order history.
           </p>
         </div>
 
         {/* Demo Fast Autofill Helper Banner */}
-        <div className="p-3.5 bg-[#352014] rounded-2xl border border-[#B58A4F]/30 text-xs space-y-2">
+        <div className="p-3.5 bg-[#140A06] rounded-2xl border border-[#D4AF37]/30 text-xs space-y-2">
           <span className="text-[11px] text-[#D4AF37] font-serif font-semibold block">
             Assessment Quick-Login Credentials:
           </span>
@@ -70,14 +73,14 @@ export default function Login() {
             <button
               type="button"
               onClick={autofillAdmin}
-              className="flex-1 py-2 px-2 bg-[#24150F] hover:bg-[#B58A4F] hover:text-[#24150F] text-[#D8B995] rounded-xl border border-[#B58A4F]/30 text-[10px] font-mono transition-colors font-semibold"
+              className="flex-1 py-2 px-2 bg-[#0A0402] hover:bg-[#D4AF37] hover:text-[#0A0402] text-[#D8B995] rounded-xl border border-[#D4AF37]/30 text-[10px] font-mono transition-all font-semibold"
             >
               👑 Fill Admin
             </button>
             <button
               type="button"
               onClick={autofillCustomer}
-              className="flex-1 py-2 px-2 bg-[#24150F] hover:bg-[#B58A4F] hover:text-[#24150F] text-[#D8B995] rounded-xl border border-[#B58A4F]/30 text-[10px] font-mono transition-colors font-semibold"
+              className="flex-1 py-2 px-2 bg-[#0A0402] hover:bg-[#D4AF37] hover:text-[#0A0402] text-[#D8B995] rounded-xl border border-[#D4AF37]/30 text-[10px] font-mono transition-all font-semibold"
             >
               👤 Fill Customer
             </button>
@@ -98,14 +101,14 @@ export default function Login() {
               Email Address
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-[#B58A4F] absolute left-3.5 top-3" />
+              <Mail className="w-4 h-4 text-[#D4AF37] absolute left-3.5 top-3" />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@domain.com"
-                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                className="w-full bg-[#140A06] text-[#F3E5D2] placeholder-[#D8B995]/40 pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#D4AF37]/30 focus:outline-none focus:border-[#D4AF37] focus:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all"
               />
             </div>
           </div>
@@ -115,14 +118,14 @@ export default function Login() {
               Password
             </label>
             <div className="relative">
-              <Lock className="w-4 h-4 text-[#B58A4F] absolute left-3.5 top-3" />
+              <Lock className="w-4 h-4 text-[#D4AF37] absolute left-3.5 top-3" />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                className="w-full bg-[#140A06] text-[#F3E5D2] placeholder-[#D8B995]/40 pl-10 pr-4 py-2.5 text-xs rounded-xl border border-[#D4AF37]/30 focus:outline-none focus:border-[#D4AF37] focus:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all"
               />
             </div>
           </div>
@@ -130,14 +133,14 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+            className="w-full py-4 btn-gold-embossed text-xs font-serif uppercase tracking-widest font-bold rounded-xl shadow-2xl transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
           >
             {loading ? (
               <span>Authenticating...</span>
             ) : (
               <>
                 <span>Sign In</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#1A0D07]" />
               </>
             )}
           </button>

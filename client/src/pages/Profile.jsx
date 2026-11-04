@@ -60,23 +60,26 @@ export default function Profile() {
   };
 
   return (
-    <div className="bg-[#24150F] min-h-screen text-[#F3E5D2] py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto space-y-10">
+    <div className="luxury-canvas-bg min-h-screen text-[#F3E5D2] py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Ambient Top Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-56 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto space-y-10 relative z-10">
         
         {/* User Card */}
-        <div className="bg-[#24150F] text-[#F3E5D2] rounded-3xl border border-[#B58A4F]/30 p-6 sm:p-8 shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="luxury-glass-panel text-[#F3E5D2] rounded-3xl border border-[#D4AF37]/35 p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 rounded-full bg-[#352014] border-2 border-[#B58A4F] flex items-center justify-center text-[#D4AF37] font-serif text-2xl font-bold">
+            <div className="w-16 h-16 rounded-full bg-[#180C07] border-2 border-[#D4AF37] flex items-center justify-center text-[#D4AF37] font-serif text-2xl font-bold shadow-[0_0_15px_rgba(212,175,55,0.3)]">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="font-serif text-2xl sm:text-3xl font-bold">{user?.name}</h1>
-                <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-[#352014] text-[#B58A4F] border border-[#B58A4F]/40">
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold gold-foil-text">{user?.name}</h1>
+                <span className="text-[10px] uppercase font-mono px-2.5 py-0.5 rounded-full bg-black/60 text-[#D4AF37] border border-[#D4AF37]/40 shadow">
                   {user?.role}
                 </span>
               </div>
-              <p className="text-xs text-[#D8B995]/70 mt-0.5">{user?.email}</p>
+              <p className="text-xs text-[#D8B995]/80 mt-1">{user?.email}</p>
             </div>
           </div>
 
@@ -84,14 +87,14 @@ export default function Profile() {
             {isAdmin && (
               <Link
                 to="/admin"
-                className="flex-1 md:flex-none px-4 py-2 bg-[#B58A4F] text-[#24150F] rounded-lg text-xs font-serif font-bold uppercase tracking-wider text-center"
+                className="flex-1 md:flex-none px-5 py-2.5 btn-gold-embossed rounded-xl text-xs font-serif font-bold uppercase tracking-wider text-center shadow-lg"
               >
                 Admin Dashboard
               </Link>
             )}
             <button
               onClick={logout}
-              className="flex-1 md:flex-none px-4 py-2 bg-[#352014] text-red-300 hover:text-red-200 border border-red-800/40 rounded-lg text-xs font-serif uppercase tracking-wider"
+              className="flex-1 md:flex-none px-4 py-2.5 bg-[#140A06] text-red-300 hover:text-red-200 border border-red-800/40 rounded-xl text-xs font-serif uppercase tracking-wider transition-colors"
             >
               Sign Out
             </button>

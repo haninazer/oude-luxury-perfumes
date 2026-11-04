@@ -67,7 +67,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 4999,
         color: 'Amber Gold',
         reason: 'Your preference for majestic Cambodian oud and royal aura pairs seamlessly with our signature Oud Royal.',
-        image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/oud-royal.jpg'
       },
       {
         id: 2,
@@ -76,7 +76,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 3499,
         color: 'Rose Pink',
         reason: 'You appreciate graceful romance and blooming florals balanced with warm oriental undertones.',
-        image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/desert-bloom.jpg'
       },
       {
         id: 3,
@@ -85,7 +85,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 4299,
         color: 'Smoky Dark Brown',
         reason: 'Your dark, magnetic profile calls for the smoky woods, cinnamon, and warm labdanum of Amber Noir.',
-        image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/amber-noir.jpg'
       },
       {
         id: 4,
@@ -94,7 +94,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 5499,
         color: 'Deep Amber Bronze',
         reason: 'For lovers of uncompromised Arabian heritage, raw leather accords, and intense aged agarwood.',
-        image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/sahara-oud.jpg'
       },
       {
         id: 6,
@@ -103,7 +103,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 4799,
         color: 'Radiant Gold',
         reason: 'Your radiant spirit desires warmth, opulent spices, orange blossom, and smooth sandalwood.',
-        image: 'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/golden-majesty.jpg'
       },
       {
         id: 7,
@@ -112,7 +112,7 @@ export default function ScentQuizModal({ isOpen, onClose }) {
         price: 3999,
         color: 'Midnight Blue and Gold',
         reason: 'Your refined taste favors freshness blended with depth—marine accords, bergamot, and rich cedarwood.',
-        image: 'https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?q=80&w=1000&auto=format&fit=crop'
+        image: '/products/midnight-oasis.jpg'
       }
     ];
 
