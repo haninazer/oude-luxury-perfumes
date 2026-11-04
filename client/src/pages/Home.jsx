@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Compass, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, Compass, ArrowRight, Sparkles, Flame, Droplets, ShieldCheck, ChevronDown } from 'lucide-react';
 import { productApi } from '../services/api.js';
 import ProductCard from '../components/ProductCard.jsx';
 import QuickViewModal from '../components/QuickViewModal.jsx';
@@ -27,10 +27,17 @@ export default function Home({ onOpenQuiz }) {
     loadProducts();
   }, []);
 
+  const scrollToCollection = () => {
+    const el = document.getElementById('collection');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-[#F3E5D2] text-[#24150F] overflow-hidden">
       
-      {/* 1. HERO SECTION - ULTRA HD 2K VIVID DESERT SUNSET */}
+      {/* 1. PRIMARY HERO SECTION - 2K ULTRA HD DESERT SUNSET & GROUNDED FLACON */}
       <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-[#24150F]">
         
         {/* Laptop / Desktop Background Image (Ultra HD 2560x1440 2K) */}
@@ -51,7 +58,7 @@ export default function Home({ onOpenQuiz }) {
           }}
         />
 
-        {/* Content Container - No milky wash; pure crisp typography */}
+        {/* Content Container */}
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full z-10 py-24 sm:py-28 min-h-screen flex items-center">
           <div className="max-w-xl space-y-6 sm:space-y-8">
             
@@ -96,7 +103,7 @@ export default function Home({ onOpenQuiz }) {
           </div>
         </div>
 
-        {/* Desktop Bottle: Perfectly seated on top of the rock plinth */}
+        {/* Desktop Bottle: Seated directly on top of the rock plinth */}
         <div className="hidden md:block absolute right-[13%] lg:right-[15%] xl:right-[16.5%] bottom-[13%] lg:bottom-[15%] w-44 sm:w-48 md:w-52 lg:w-56 z-20 pointer-events-auto">
           <HeroFlacon />
         </div>
@@ -106,11 +113,129 @@ export default function Home({ onOpenQuiz }) {
           <HeroFlacon />
         </div>
 
-        {/* Soft bottom edge blend into the collection */}
-        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#F3E5D2] to-transparent pointer-events-none" />
+        {/* Subtle scroll indicator */}
+        <button
+          onClick={scrollToCollection}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-[#352014]/70 hover:text-[#24150F] flex flex-col items-center space-y-1 transition-colors animate-bounce"
+          aria-label="Scroll to next section"
+        >
+          <span className="text-[10px] uppercase font-serif tracking-widest font-semibold">Explore</span>
+          <ChevronDown className="w-4 h-4" />
+        </button>
       </section>
 
-      {/* 2. THE SEVEN PERFUMES COLLECTION */}
+      {/* 2. SECOND HERO SECTION: GOLDEN SAND DUNES SENSORY CHAPTER */}
+      <section
+        className="relative py-28 px-6 sm:px-10 lg:px-14 bg-cover bg-center text-[#F3E5D2] overflow-hidden border-y border-[#B58A4F]/40 shadow-2xl"
+        style={{
+          backgroundImage: `url('/dunes-sand.jpg')`,
+          backgroundAttachment: 'scroll',
+        }}
+      >
+        {/* Top & Bottom Deep Espresso Vignette Shadows for Seamless Transition */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#24150F] to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#24150F] to-transparent pointer-events-none" />
+
+        {/* Center Contrast Shade for Text Readability */}
+        <div className="absolute inset-0 bg-[#24150F]/45 backdrop-blur-[1px] pointer-events-none" />
+
+        <div className="relative max-w-6xl mx-auto z-10 text-center space-y-10">
+          
+          {/* Header */}
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#24150F]/80 border border-[#B58A4F]/50 shadow-xl backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-[11px] uppercase font-serif tracking-[0.25em] text-[#D8B995] font-semibold">
+                THE SACRED SANDS OF ARABIA
+              </span>
+            </div>
+
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F3E5D2] leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+              Born from the Dunes,<br />
+              <span className="text-[#D4AF37] italic font-serif">Matured by Ancient Craft.</span>
+            </h2>
+
+            <p className="text-sm sm:text-base text-[#F3E5D2]/90 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              Across thousands of miles of undulating desert sand, the ritual of perfumery has heralded the arrival of Arabian nobility. Every flacon of OUDÉ captures this timeless alchemy.
+            </p>
+          </div>
+
+          {/* 3 Sensory Pillars Over the Dunes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
+            
+            {/* Pillar 1: Rare Agarwood */}
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+                <Flame className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+                Raw Heartwood Essence
+              </span>
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+                Aged Cambodian Oud
+              </h3>
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+                Extracted from ancient resinous agarwood trees, aged in sealed glass vessels for rich balsamic warmth, smoke, and majestic authority.
+              </p>
+            </div>
+
+            {/* Pillar 2: Dawn Distillates */}
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+                <Droplets className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+                Floral Royalty
+              </span>
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+                Taif & Damask Roses
+              </h3>
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+                Harvested by hand in the cool mountain dawn to preserve volatile dew petals, lending velvet romance and golden sweetness.
+              </p>
+            </div>
+
+            {/* Pillar 3: 16+ Hours Extrait */}
+            <div className="bg-[#24150F]/85 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/40 shadow-2xl hover:border-[#D4AF37] transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-[#352014] border border-[#B58A4F]/40 flex items-center justify-center text-[#D4AF37] mb-5 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#B58A4F] block mb-1">
+                Uncompromising Potency
+              </span>
+              <h3 className="font-serif text-xl font-bold text-[#F3E5D2] mb-2">
+                28% Extrait Concentration
+              </h3>
+              <p className="text-xs text-[#D8B995]/85 leading-relaxed">
+                Formulated at the highest concentration grade in fine perfumery, guaranteeing an unforgettable royal sillage that endures past sunset.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Action Row */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={scrollToCollection}
+              className="px-8 py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-serif text-xs uppercase tracking-[0.22em] font-bold rounded-lg shadow-gold-glow transition-all flex items-center space-x-2"
+            >
+              <span>Explore The Seven Scents</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={onOpenQuiz}
+              className="px-8 py-4 bg-[#24150F]/80 hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/50 font-serif text-xs uppercase tracking-[0.2em] font-medium rounded-lg backdrop-blur-md transition-all flex items-center space-x-2"
+            >
+              <Compass className="w-4 h-4 text-[#D4AF37]" />
+              <span>Take Scent Profiler Quiz</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. THE SEVEN PERFUMES COLLECTION */}
       <section id="collection" className="py-24 px-6 sm:px-10 lg:px-14 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs uppercase font-serif tracking-[0.25em] text-[#B58A4F] block">
@@ -154,7 +279,7 @@ export default function Home({ onOpenQuiz }) {
         </div>
       </section>
 
-      {/* 3. OUR STORY SECTION */}
+      {/* 4. OUR STORY SECTION */}
       <section id="story" className="bg-[#24150F] text-[#F3E5D2] py-24 border-y border-[#B58A4F]/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -212,7 +337,7 @@ export default function Home({ onOpenQuiz }) {
         </div>
       </section>
 
-      {/* 4. SCENT QUIZ PROFILER CALLOUT */}
+      {/* 5. SCENT QUIZ PROFILER CALLOUT */}
       <section id="quiz" className="py-20 px-6 sm:px-10 lg:px-14 max-w-5xl mx-auto text-center">
         <div className="bg-gradient-to-r from-[#24150F] via-[#352014] to-[#24150F] rounded-3xl p-8 sm:p-14 border border-[#B58A4F]/40 shadow-2xl text-[#F3E5D2] relative overflow-hidden">
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
