@@ -30,44 +30,47 @@ export default function Home({ onOpenQuiz }) {
   return (
     <div className="bg-[#F3E5D2] text-[#24150F] overflow-hidden">
       
-      {/* 1. HERO SECTION WITH SEPARATE MOBILE & DESKTOP BACKGROUNDS */}
-      <section className="relative min-h-screen w-full flex items-center overflow-hidden">
+      {/* 1. HERO SECTION - ULTRA HD 2K VIVID DESERT SUNSET */}
+      <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-[#24150F]">
         
-        {/* Laptop / Desktop Background Image (16:9 Landscape) */}
+        {/* Laptop / Desktop Background Image (Ultra HD 2560x1440 2K) */}
         <div
           className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('/bg-desktop.jpg')` }}
+          style={{
+            backgroundImage: `url('/bg-desktop.jpg')`,
+            imageRendering: '-webkit-optimize-contrast',
+          }}
         />
 
-        {/* Mobile Background Image (Vertical / Portrait) */}
+        {/* Mobile Background Image (Super Retina 1364x2048) */}
         <div
           className="block md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('/bg-mobile.jpg')` }}
+          style={{
+            backgroundImage: `url('/bg-mobile.jpg')`,
+            imageRendering: '-webkit-optimize-contrast',
+          }}
         />
 
-        {/* Ambient Warm Golden Overlay for Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F3E5D2]/85 via-[#F3E5D2]/35 to-transparent pointer-events-none md:max-w-2xl lg:max-w-3xl" />
-
-        {/* Content Container */}
+        {/* Content Container - No milky wash; pure crisp typography */}
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full z-10 py-24 sm:py-28 min-h-screen flex items-center">
           <div className="max-w-xl space-y-6 sm:space-y-8">
             
             {/* Pre-Heading */}
             <div className="flex items-center space-x-2">
-              <span className="text-[11px] sm:text-xs uppercase font-serif tracking-[0.25em] text-[#352014] font-medium">
+              <span className="text-[11px] sm:text-xs uppercase font-serif tracking-[0.28em] text-[#352014] font-semibold drop-shadow-[0_1px_1px_rgba(255,230,190,0.5)]">
                 OUDÉ — THE ART OF ARABIAN PERFUMERY
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#24150F] leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#24150F] leading-[1.05] tracking-tight drop-shadow-[0_1px_2px_rgba(255,230,190,0.4)]">
               THE ESSENCE OF<br />
               ARABIAN<br />
               LUXURY.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-[#352014]/90 font-light leading-relaxed max-w-md">
+            <p className="text-sm sm:text-base md:text-lg text-[#352014] font-medium leading-relaxed max-w-md drop-shadow-[0_1px_1px_rgba(255,230,190,0.3)]">
               A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
             </p>
 
@@ -83,9 +86,9 @@ export default function Home({ onOpenQuiz }) {
 
               <button
                 onClick={onOpenQuiz}
-                className="inline-flex items-center space-x-2 px-6 py-4 bg-[#F3E5D2]/80 hover:bg-[#F3E5D2] text-[#24150F] border border-[#24150F]/30 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-medium transition-all"
+                className="inline-flex items-center space-x-2 px-6 py-4 bg-[#24150F]/15 hover:bg-[#24150F]/25 text-[#24150F] border border-[#24150F]/40 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-semibold transition-all"
               >
-                <Compass className="w-3.5 h-3.5 text-[#B58A4F]" />
+                <Compass className="w-3.5 h-3.5 text-[#352014]" />
                 <span>Scent Profiler</span>
               </button>
             </div>
@@ -93,8 +96,8 @@ export default function Home({ onOpenQuiz }) {
           </div>
         </div>
 
-        {/* Desktop Bottle: Seated directly on top of the rock plinth (smaller, no glazing, no hover distortion) */}
-        <div className="hidden md:block absolute right-[13%] lg:right-[15%] xl:right-[16.5%] bottom-[14%] lg:bottom-[15.5%] w-44 sm:w-48 md:w-52 lg:w-56 z-20 pointer-events-auto">
+        {/* Desktop Bottle: Perfectly seated on top of the rock plinth */}
+        <div className="hidden md:block absolute right-[13%] lg:right-[15%] xl:right-[16.5%] bottom-[13%] lg:bottom-[15%] w-44 sm:w-48 md:w-52 lg:w-56 z-20 pointer-events-auto">
           <HeroFlacon />
         </div>
 
@@ -103,7 +106,7 @@ export default function Home({ onOpenQuiz }) {
           <HeroFlacon />
         </div>
 
-        {/* Soft bottom edge blend */}
+        {/* Soft bottom edge blend into the collection */}
         <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#F3E5D2] to-transparent pointer-events-none" />
       </section>
 
