@@ -60,7 +60,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="bg-[#F3E5D2] min-h-screen text-[#24150F] py-14 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">
         
         {/* User Card */}
@@ -84,14 +84,14 @@ export default function Profile() {
             {isAdmin && (
               <Link
                 to="/admin"
-                className="flex-1 md:flex-none px-4 py-2 bg-[#B58A4F] text-[#24150F] rounded text-xs font-serif font-bold uppercase tracking-wider text-center"
+                className="flex-1 md:flex-none px-4 py-2 bg-[#B58A4F] text-[#24150F] rounded-lg text-xs font-serif font-bold uppercase tracking-wider text-center"
               >
                 Admin Dashboard
               </Link>
             )}
             <button
               onClick={logout}
-              className="flex-1 md:flex-none px-4 py-2 bg-[#352014] text-red-300 hover:text-red-200 border border-red-800/40 rounded text-xs font-serif uppercase tracking-wider"
+              className="flex-1 md:flex-none px-4 py-2 bg-[#352014] text-red-300 hover:text-red-200 border border-red-800/40 rounded-lg text-xs font-serif uppercase tracking-wider"
             >
               Sign Out
             </button>
@@ -103,19 +103,19 @@ export default function Profile() {
           
           {/* Left: Contact Info */}
           <div className="lg:col-span-4">
-            <div className="bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 p-6 space-y-4">
+            <div className="bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 p-6 space-y-4 shadow-xl">
               <div className="flex justify-between items-center pb-3 border-b border-[#B58A4F]/20">
                 <h3 className="font-serif text-lg font-bold">Personal Profile</h3>
                 <button
                   onClick={() => setIsEditing(!isEditing)}
-                  className="text-xs text-[#B58A4F] hover:underline"
+                  className="text-xs text-[#D4AF37] hover:underline"
                 >
                   {isEditing ? 'Cancel' : 'Edit'}
                 </button>
               </div>
 
               {updateSuccess && (
-                <div className="p-2.5 bg-emerald-950 text-emerald-300 text-xs rounded border border-emerald-800">
+                <div className="p-2.5 bg-emerald-950 text-emerald-300 text-xs rounded-lg border border-emerald-800">
                   Profile updated successfully.
                 </div>
               )}
@@ -128,7 +128,7 @@ export default function Profile() {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded border border-[#B58A4F]/30 text-xs"
+                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg border border-[#B58A4F]/30 text-xs"
                     />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ export default function Profile() {
                       type="text"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded border border-[#B58A4F]/30 text-xs"
+                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg border border-[#B58A4F]/30 text-xs"
                     />
                   </div>
                   <div>
@@ -146,12 +146,12 @@ export default function Profile() {
                       rows={2}
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded border border-[#B58A4F]/30 text-xs"
+                      className="w-full bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg border border-[#B58A4F]/30 text-xs"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-2 bg-[#B58A4F] text-[#24150F] font-bold text-xs uppercase rounded"
+                    className="w-full py-2 bg-[#B58A4F] text-[#24150F] font-bold text-xs uppercase rounded-lg"
                   >
                     Save Changes
                   </button>
@@ -177,24 +177,24 @@ export default function Profile() {
 
           {/* Right: Order History */}
           <div className="lg:col-span-8 space-y-4">
-            <h3 className="font-serif text-2xl font-bold text-[#24150F] flex items-center space-x-2">
+            <h3 className="font-serif text-2xl font-bold text-[#F3E5D2] flex items-center space-x-2">
               <Package className="w-5 h-5 text-[#B58A4F]" />
               <span>Your Luxury Acquisition History</span>
             </h3>
 
             {loadingOrders ? (
-              <div className="py-12 text-center text-xs text-[#352014]">
+              <div className="py-12 text-center text-xs text-[#D8B995]">
                 Loading your orders...
               </div>
             ) : orders.length === 0 ? (
-              <div className="bg-[#24150F] text-[#F3E5D2] rounded-2xl p-8 border border-[#B58A4F]/30 text-center space-y-3">
+              <div className="bg-[#24150F] text-[#F3E5D2] rounded-2xl p-8 border border-[#B58A4F]/30 text-center space-y-3 shadow-xl">
                 <p className="font-serif text-lg">No orders placed yet</p>
                 <p className="text-xs text-[#D8B995]/70 max-w-sm mx-auto">
                   Begin your olfactory journey by exploring our seven signature Arabian perfumes.
                 </p>
                 <Link
                   to="/shop"
-                  className="inline-block px-6 py-2.5 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded"
+                  className="inline-block px-6 py-2.5 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-gold-glow"
                 >
                   Explore The Collection
                 </Link>
@@ -204,7 +204,7 @@ export default function Profile() {
                 {orders.map((ord) => (
                   <div
                     key={ord.id}
-                    className="bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 p-6 shadow-md space-y-4"
+                    className="bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 p-6 shadow-xl space-y-4"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#B58A4F]/20 gap-2">
                       <div>
@@ -217,10 +217,10 @@ export default function Profile() {
                       </div>
 
                       <div className="flex items-center space-x-3">
-                        <span className={`text-[10px] uppercase font-mono px-2.5 py-1 rounded border capitalize ${getStatusColor(ord.status)}`}>
+                        <span className={`text-[10px] uppercase font-mono px-2.5 py-1 rounded-lg border capitalize ${getStatusColor(ord.status)}`}>
                           ● {ord.status}
                         </span>
-                        <span className="font-serif text-lg font-bold text-[#B58A4F]">
+                        <span className="font-serif text-lg font-bold text-[#D4AF37]">
                           ₹{Number(ord.total).toLocaleString('en-IN')}
                         </span>
                       </div>
@@ -235,7 +235,7 @@ export default function Profile() {
                               <img
                                 src={item.image_url}
                                 alt={item.product_name}
-                                className="w-10 h-12 object-cover rounded border border-[#B58A4F]/20"
+                                className="w-10 h-12 object-cover rounded-lg border border-[#B58A4F]/20"
                               />
                             )}
                             <div>

@@ -9,7 +9,6 @@ export default function OrderConfirmation() {
   const order = location.state?.order;
 
   useEffect(() => {
-    // Luxury confetti burst
     if (order) {
       confetti({
         particleCount: 80,
@@ -22,15 +21,15 @@ export default function OrderConfirmation() {
 
   if (!order) {
     return (
-      <div className="min-h-[70vh] bg-[#F3E5D2] flex items-center justify-center px-4">
-        <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4">
+      <div className="min-h-[75vh] bg-[#1C100B] flex items-center justify-center px-4 pt-20">
+        <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4 shadow-xl">
           <p className="font-serif text-2xl">No Order Session Found</p>
           <p className="text-xs text-[#D8B995]/70">
             If you have placed an order, you can view its live status under your profile.
           </p>
           <Link
             to="/shop"
-            className="inline-block px-6 py-2.5 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded"
+            className="inline-block px-6 py-2.5 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-gold-glow"
           >
             Explore Fragrances
           </Link>
@@ -44,7 +43,7 @@ export default function OrderConfirmation() {
   };
 
   return (
-    <div className="bg-[#F3E5D2] min-h-screen text-[#24150F] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] py-20 px-4 sm:px-6 lg:px-8 pt-28">
       <div className="max-w-3xl mx-auto space-y-8">
         
         {/* Celebration Header */}
@@ -55,10 +54,10 @@ export default function OrderConfirmation() {
           <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F] block">
             Order Confirmed & Allocated
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#24150F]">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#F3E5D2]">
             The Essence of Arabian Luxury is En Route
           </h1>
-          <p className="text-xs sm:text-sm text-[#352014]/80 max-w-lg mx-auto font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#D8B995]/80 max-w-lg mx-auto font-light leading-relaxed">
             Thank you, {order.customer_name}. Your flacon is being prepared and hand-sealed by our master perfumers in our temperature-controlled vault.
           </p>
         </div>
@@ -81,7 +80,7 @@ export default function OrderConfirmation() {
               <span className="text-[10px] uppercase font-mono text-[#D8B995]/70 block">
                 Order Status
               </span>
-              <span className="inline-block px-3 py-1 bg-[#352014] text-[#D8B995] border border-[#B58A4F]/40 rounded text-xs font-serif capitalize">
+              <span className="inline-block px-3 py-1 bg-[#352014] text-[#D4AF37] border border-[#B58A4F]/40 rounded-lg text-xs font-serif capitalize">
                 ● {order.status || 'Processing'}
               </span>
             </div>
@@ -122,7 +121,7 @@ export default function OrderConfirmation() {
                       <img
                         src={item.image_url}
                         alt={item.name || item.product_name}
-                        className="w-12 h-14 object-cover rounded border border-[#B58A4F]/30 bg-[#352014] flex-shrink-0"
+                        className="w-12 h-14 object-cover rounded-lg border border-[#B58A4F]/30 bg-[#352014] flex-shrink-0"
                       />
                     )}
                     <div className="min-w-0">
@@ -135,7 +134,7 @@ export default function OrderConfirmation() {
                     </div>
                   </div>
 
-                  <span className="font-mono text-sm font-bold text-[#B58A4F]">
+                  <span className="font-mono text-sm font-bold text-[#D4AF37]">
                     ₹{(Number(item.price) * item.quantity).toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -173,7 +172,7 @@ export default function OrderConfirmation() {
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <button
               onClick={handlePrint}
-              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-lg text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
+              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-xl text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
             >
               <Printer className="w-4 h-4 text-[#B58A4F]" />
               <span>Print Official Invoice</span>
@@ -181,7 +180,7 @@ export default function OrderConfirmation() {
 
             <Link
               to="/profile"
-              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-lg text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
+              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-xl text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
             >
               <Package className="w-4 h-4 text-[#B58A4F]" />
               <span>Track in My Account</span>
@@ -189,7 +188,7 @@ export default function OrderConfirmation() {
 
             <Link
               to="/shop"
-              className="flex-1 px-6 py-3 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] rounded-lg text-xs uppercase tracking-widest font-bold transition-all shadow-gold-glow flex items-center justify-center space-x-2"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] rounded-xl text-xs uppercase tracking-widest font-bold transition-all shadow-gold-glow flex items-center justify-center space-x-2"
             >
               <span>Explore More Scents</span>
               <ArrowRight className="w-4 h-4" />

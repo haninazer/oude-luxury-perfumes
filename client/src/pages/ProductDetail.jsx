@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Star, ShieldCheck, Truck, RefreshCw, Sparkles, Heart, ChevronRight, AlertTriangle, ArrowLeft } from 'lucide-react';
+import { ShoppingBag, Star, ShieldCheck, Truck, Sparkles, ChevronRight, AlertTriangle } from 'lucide-react';
 import { productApi } from '../services/api.js';
 import { useCart } from '../context/CartContext.jsx';
 import FragrancePyramid from '../components/FragrancePyramid.jsx';
@@ -43,10 +43,10 @@ export default function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F3E5D2] flex items-center justify-center">
+      <div className="min-h-screen bg-[#1C100B] flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-12 h-12 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="font-serif text-[#24150F] text-base">Unveiling Fragrance Essence...</p>
+          <p className="font-serif text-[#D8B995] text-base">Unveiling Fragrance Essence...</p>
         </div>
       </div>
     );
@@ -54,7 +54,7 @@ export default function ProductDetail() {
 
   if (error || !product) {
     return (
-      <div className="min-h-[70vh] bg-[#F3E5D2] flex items-center justify-center px-4">
+      <div className="min-h-[70vh] bg-[#1C100B] flex items-center justify-center px-4">
         <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4">
           <p className="font-serif text-2xl text-red-400">Fragrance Unavailable</p>
           <p className="text-xs text-[#D8B995]/70">{error || 'This fragrance profile could not be found.'}</p>
@@ -87,14 +87,14 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="bg-[#F3E5D2] text-[#24150F] min-h-screen pb-24">
+    <div className="bg-[#1C100B] text-[#F3E5D2] min-h-screen pb-24 pt-20">
       {/* Breadcrumbs */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-[#352014]/70 flex items-center space-x-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-[#D8B995]/70 flex items-center space-x-2">
         <Link to="/" className="hover:text-[#B58A4F]">Home</Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <Link to="/shop" className="hover:text-[#B58A4F]">Fragrances</Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#B58A4F] font-serif font-semibold">{product.name}</span>
+        <span className="text-[#D4AF37] font-serif font-semibold">{product.name}</span>
       </div>
 
       {/* Main Product Showcase Section */}
@@ -103,7 +103,7 @@ export default function ProductDetail() {
           
           {/* Left Column: Visual Flacon Stage */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#B58A4F]/30 bg-[#24150F] shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#B58A4F]/40 bg-[#24150F] shadow-2xl">
               <img
                 src={product.image_url}
                 alt={product.name}
@@ -112,33 +112,33 @@ export default function ProductDetail() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#24150F] via-transparent to-transparent opacity-60" />
               
               {/* Bottle Hue Badge */}
-              <div className="absolute top-4 left-4 bg-[#24150F]/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#B58A4F]/40 flex items-center space-x-2">
+              <div className="absolute top-4 left-4 bg-[#24150F]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#B58A4F]/40 flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#B58A4F]" />
                 <span className="text-xs font-serif text-[#F3E5D2]">{product.bottle_color} Flacon</span>
               </div>
 
               {/* Concentration Tag */}
-              <div className="absolute bottom-4 left-4 bg-[#24150F]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#B58A4F]/30 text-[11px] font-mono text-[#D4AF37]">
+              <div className="absolute bottom-4 left-4 bg-[#24150F]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#B58A4F]/30 text-[11px] font-mono text-[#D4AF37]">
                 EDP {product.size || '100ml'} • 28% Extrait De Parfum
               </div>
             </div>
 
             {/* Value Guarantees */}
-            <div className="grid grid-cols-3 gap-3 text-center text-xs text-[#352014]">
-              <div className="p-3 bg-[#E8C9A8]/40 rounded-xl border border-[#B58A4F]/20">
+            <div className="grid grid-cols-3 gap-3 text-center text-xs text-[#F3E5D2]">
+              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
                 <Truck className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px]">Free Courier</span>
-                <span className="text-[10px] text-[#352014]/70">On orders over ₹3,000</span>
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">Free Courier</span>
+                <span className="text-[10px] text-[#D8B995]/70">On orders over ₹3,000</span>
               </div>
-              <div className="p-3 bg-[#E8C9A8]/40 rounded-xl border border-[#B58A4F]/20">
+              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
                 <Sparkles className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px]">Complimentary Sample</span>
-                <span className="text-[10px] text-[#352014]/70">Try before unsealing</span>
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">Complimentary Sample</span>
+                <span className="text-[10px] text-[#D8B995]/70">Try before unsealing</span>
               </div>
-              <div className="p-3 bg-[#E8C9A8]/40 rounded-xl border border-[#B58A4F]/20">
+              <div className="p-4 bg-[#24150F] rounded-2xl border border-[#B58A4F]/30 shadow-lg">
                 <ShieldCheck className="w-4 h-4 text-[#B58A4F] mx-auto mb-1" />
-                <span className="font-serif font-semibold block text-[11px]">100% Authentic</span>
-                <span className="text-[10px] text-[#352014]/70">Hand-finished seals</span>
+                <span className="font-serif font-semibold block text-[11px] text-[#F3E5D2]">100% Authentic</span>
+                <span className="text-[10px] text-[#D8B995]/70">Hand-finished seals</span>
               </div>
             </div>
           </div>
@@ -152,36 +152,36 @@ export default function ProductDetail() {
                 <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F]">
                   {product.category}
                 </span>
-                <span className="text-[#352014]/40">•</span>
-                <span className="text-xs text-[#352014]/70 italic">Product #{product.id}</span>
+                <span className="text-[#D8B995]/40">•</span>
+                <span className="text-xs text-[#D8B995]/70 italic">Product #{product.id}</span>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#24150F] mt-1.5 leading-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#F3E5D2] mt-1.5 leading-tight">
                 {product.name}
               </h1>
 
-              <p className="text-sm text-[#B58A4F] font-serif italic mt-1 text-base">
+              <p className="text-base text-[#D4AF37] font-serif italic mt-1">
                 "{product.character}"
               </p>
 
               {/* Rating and Reviews */}
               <div className="flex items-center space-x-2 mt-3">
-                <div className="flex text-[#B58A4F]">
+                <div className="flex text-[#D4AF37]">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <span className="text-xs font-mono font-medium text-[#24150F]">
+                <span className="text-xs font-mono font-medium text-[#F3E5D2]">
                   {product.rating || '4.95'}
                 </span>
-                <span className="text-xs text-[#352014]/60">
+                <span className="text-xs text-[#D8B995]/60">
                   ({product.reviews_count || 32} verified connoisseur reviews)
                 </span>
               </div>
             </div>
 
             {/* Price block */}
-            <div className="p-5 bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 flex items-center justify-between">
+            <div className="p-6 bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/40 shadow-xl flex items-center justify-between">
               <div>
                 <span className="text-[10px] uppercase font-mono tracking-wider text-[#D8B995]/70 block">
                   Price (All Taxes Included)
@@ -211,27 +211,27 @@ export default function ProductDetail() {
             </div>
 
             {/* Description */}
-            <div className="space-y-3 text-sm text-[#352014]/90 leading-relaxed font-light">
+            <div className="space-y-3 text-sm text-[#D8B995]/90 leading-relaxed font-light">
               <p>{product.description}</p>
             </div>
 
             {/* Olfactory Specs Meter */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#E8C9A8]/40 p-4 rounded-xl border border-[#B58A4F]/20 text-xs text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#24150F] p-4 rounded-2xl border border-[#B58A4F]/30 text-xs text-center shadow-lg">
               <div>
-                <span className="text-[10px] text-[#352014]/60 uppercase tracking-wider block">Longevity</span>
-                <span className="font-serif font-bold text-[#24150F] text-sm">14+ Hours</span>
+                <span className="text-[10px] text-[#D8B995]/60 uppercase tracking-wider block">Longevity</span>
+                <span className="font-serif font-bold text-[#D4AF37] text-sm">14+ Hours</span>
               </div>
               <div className="border-l border-[#B58A4F]/20">
-                <span className="text-[10px] text-[#352014]/60 uppercase tracking-wider block">Sillage</span>
-                <span className="font-serif font-bold text-[#24150F] text-sm">Regal & Deep</span>
+                <span className="text-[10px] text-[#D8B995]/60 uppercase tracking-wider block">Sillage</span>
+                <span className="font-serif font-bold text-[#D4AF37] text-sm">Regal & Deep</span>
               </div>
               <div className="border-l border-[#B58A4F]/20">
-                <span className="text-[10px] text-[#352014]/60 uppercase tracking-wider block">Concentration</span>
-                <span className="font-serif font-bold text-[#24150F] text-sm">Extrait 28%</span>
+                <span className="text-[10px] text-[#D8B995]/60 uppercase tracking-wider block">Concentration</span>
+                <span className="font-serif font-bold text-[#D4AF37] text-sm">Extrait 28%</span>
               </div>
               <div className="border-l border-[#B58A4F]/20">
-                <span className="text-[10px] text-[#352014]/60 uppercase tracking-wider block">Season</span>
-                <span className="font-serif font-bold text-[#24150F] text-sm">All Seasons</span>
+                <span className="text-[10px] text-[#D8B995]/60 uppercase tracking-wider block">Season</span>
+                <span className="font-serif font-bold text-[#D4AF37] text-sm">All Seasons</span>
               </div>
             </div>
 
@@ -239,7 +239,7 @@ export default function ProductDetail() {
             <div className="space-y-3 pt-2">
               <div className="flex items-center space-x-4">
                 {/* Quantity picker */}
-                <div className="flex items-center bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-lg px-4 py-3 space-x-4">
+                <div className="flex items-center bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-xl px-4 py-3 space-x-4">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1 || isOutOfStock}
@@ -261,7 +261,7 @@ export default function ProductDetail() {
                 <button
                   onClick={handleAddToCart}
                   disabled={isOutOfStock || cartLoading}
-                  className={`flex-1 py-4 px-6 rounded-lg text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center space-x-2 ${
+                  className={`flex-1 py-4 px-6 rounded-xl text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center space-x-2 ${
                     isOutOfStock
                       ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed border border-zinc-700'
                       : 'bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] border border-[#B58A4F]'
@@ -276,7 +276,7 @@ export default function ProductDetail() {
               {!isOutOfStock && (
                 <button
                   onClick={handleBuyNow}
-                  className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-lg shadow-gold-glow transition-all"
+                  className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow transition-all"
                 >
                   Instant White-Glove Checkout • ₹{(Number(product.price) * quantity).toLocaleString('en-IN')}
                 </button>
@@ -292,10 +292,10 @@ export default function ProductDetail() {
             <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F] block">
               Olfactory Progression
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#24150F]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F3E5D2]">
               How {product.name} Evolves
             </h2>
-            <p className="text-xs text-[#352014]/70 font-light">
+            <p className="text-xs text-[#D8B995]/70 font-light">
               Arabian luxury fragrances are composed to develop gradually upon your skin over twelve to sixteen hours.
             </p>
           </div>
@@ -318,11 +318,11 @@ export default function ProductDetail() {
                 <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F] block">
                   Curated Pairings
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#24150F]">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#F3E5D2]">
                   Complementary Arabian Scents
                 </h3>
               </div>
-              <Link to="/shop" className="text-xs text-[#B58A4F] hover:underline font-serif font-medium">
+              <Link to="/shop" className="text-xs text-[#D4AF37] hover:underline font-serif font-medium">
                 View All 7 Fragrances →
               </Link>
             </div>

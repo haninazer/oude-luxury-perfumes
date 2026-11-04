@@ -49,13 +49,6 @@ export default function Checkout() {
     }
   }, [user]);
 
-  // Redirect if cart is empty
-  useEffect(() => {
-    if (items.length === 0 && !loading) {
-      // Allow a brief moment or redirect
-    }
-  }, [items, loading]);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -95,9 +88,7 @@ export default function Checkout() {
       const res = await orderApi.create(orderPayload);
 
       if (res.success && res.order) {
-        // Clear local cart
         await clearCart();
-        // Navigate to confirmation page
         navigate('/order-confirmation', { state: { order: res.order } });
       } else {
         setErrorMessage(res.message || 'Failed to place order.');
@@ -117,7 +108,7 @@ export default function Checkout() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-[70vh] bg-[#F3E5D2] flex items-center justify-center px-4">
+      <div className="min-h-[75vh] bg-[#1C100B] flex items-center justify-center px-4 pt-20">
         <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4 shadow-xl">
           <p className="font-serif text-2xl">Your Bag is Empty</p>
           <p className="text-xs text-[#D8B995]/70">
@@ -125,7 +116,7 @@ export default function Checkout() {
           </p>
           <Link
             to="/shop"
-            className="inline-block px-6 py-3 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded"
+            className="inline-block px-6 py-3 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-gold-glow"
           >
             Explore Fragrances
           </Link>
@@ -135,7 +126,7 @@ export default function Checkout() {
   }
 
   return (
-    <div className="bg-[#F3E5D2] min-h-screen text-[#24150F] pb-24">
+    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] pb-24 pt-20">
       {/* Header */}
       <div className="bg-[#24150F] text-[#F3E5D2] py-8 border-b border-[#B58A4F]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -193,7 +184,7 @@ export default function Checkout() {
                     value={formData.customer_name}
                     onChange={handleChange}
                     placeholder="e.g. Hani Nazer Mutheri"
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
 
@@ -208,7 +199,7 @@ export default function Checkout() {
                     value={formData.customer_email}
                     onChange={handleChange}
                     placeholder="hani@oude.com"
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
 
@@ -223,7 +214,7 @@ export default function Checkout() {
                     value={formData.shipping_address}
                     onChange={handleChange}
                     placeholder="Penthouse 14B, Palm Avenue, Downtown"
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
 
@@ -237,7 +228,7 @@ export default function Checkout() {
                     required
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
 
@@ -251,7 +242,7 @@ export default function Checkout() {
                     required
                     value={formData.postal_code}
                     onChange={handleChange}
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
 
@@ -266,7 +257,7 @@ export default function Checkout() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98765 43210"
-                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                    className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-2.5 rounded-lg text-sm border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                   />
                 </div>
               </div>
@@ -319,11 +310,11 @@ export default function Checkout() {
 
           {/* Right Column: Server-Calculated Order Summary */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#24150F] text-[#F3E5D2] p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/30 shadow-2xl space-y-6 sticky top-24">
+            <div className="bg-[#24150F] text-[#F3E5D2] p-6 sm:p-8 rounded-2xl border border-[#B58A4F]/30 shadow-2xl space-y-6 sticky top-28">
               
               <div className="pb-4 border-b border-[#B58A4F]/20 flex justify-between items-center">
                 <h2 className="font-serif text-xl font-bold">Order Summary</h2>
-                <span className="text-xs font-mono text-[#B58A4F]">{itemCount} item(s)</span>
+                <span className="text-xs font-mono text-[#D4AF37]">{itemCount} item(s)</span>
               </div>
 
               {/* Items List */}
@@ -333,7 +324,7 @@ export default function Checkout() {
                     <img
                       src={item.image_url}
                       alt={item.name}
-                      className="w-12 h-14 object-cover rounded border border-[#B58A4F]/30 bg-[#352014]"
+                      className="w-12 h-14 object-cover rounded-lg border border-[#B58A4F]/30 bg-[#352014]"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="font-serif font-bold text-sm text-[#F3E5D2] truncate">{item.name}</p>
@@ -341,7 +332,7 @@ export default function Checkout() {
                         Qty: {item.quantity} • {item.size || '100ml'}
                       </p>
                     </div>
-                    <span className="font-mono text-[#B58A4F] font-bold">
+                    <span className="font-mono text-[#D4AF37] font-bold">
                       ₹{(Number(item.price) * item.quantity).toLocaleString('en-IN')}
                     </span>
                   </div>
@@ -356,12 +347,12 @@ export default function Checkout() {
                     placeholder="Enter code (try OUDE10)"
                     value={inputPromo}
                     onChange={(e) => setInputPromo(e.target.value.toUpperCase())}
-                    className="flex-1 bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-3 py-2 text-xs rounded border border-[#B58A4F]/30 uppercase font-mono focus:outline-none focus:border-[#B58A4F]"
+                    className="flex-1 bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-3 py-2 text-xs rounded-lg border border-[#B58A4F]/30 uppercase font-mono focus:outline-none focus:border-[#B58A4F]"
                   />
                   <button
                     type="button"
                     onClick={handleApplyPromoCode}
-                    className="bg-[#B58A4F]/30 hover:bg-[#B58A4F] text-[#F3E5D2] hover:text-[#24150F] border border-[#B58A4F] px-3.5 py-2 text-xs rounded font-medium transition-colors"
+                    className="bg-[#B58A4F]/30 hover:bg-[#B58A4F] text-[#F3E5D2] hover:text-[#24150F] border border-[#B58A4F] px-3.5 py-2 text-xs rounded-lg font-medium transition-colors"
                   >
                     Apply
                   </button>
@@ -407,7 +398,7 @@ export default function Checkout() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-lg shadow-gold-glow transition-all disabled:opacity-50 flex items-center justify-center space-x-2"
+                className="w-full py-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] font-bold text-xs uppercase tracking-widest rounded-xl shadow-gold-glow transition-all disabled:opacity-50 flex items-center justify-center space-x-2"
               >
                 {loading ? (
                   <>

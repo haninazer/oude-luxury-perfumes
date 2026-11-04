@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ShoppingBag, Search, X, User, Shield, ChevronDown, LogOut, ArrowUpRight } from 'lucide-react';
+import { ShoppingBag, Search, X, Menu, User, Shield, ChevronDown, LogOut, ArrowUpRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useCart } from '../context/CartContext.jsx';
 import { productApi } from '../services/api.js';
@@ -126,7 +126,7 @@ export default function Navbar({ onOpenQuiz }) {
             to="/"
             className={`transition-colors relative py-1 ${
               location.pathname === '/'
-                ? `${textColor} font-semibold border-b border-[#24150F]`
+                ? `${textColor} font-semibold border-b ${isTransparent ? 'border-[#24150F]' : 'border-[#B58A4F]'}`
                 : `${textColor}/80 hover:${textColor}`
             }`}
           >
@@ -303,9 +303,65 @@ export default function Navbar({ onOpenQuiz }) {
               {itemCount}
             </span>
           </button>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`p-1.5 md:hidden transition-colors ${textColor}`}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
       </div>
+
+      {/* Mobile Drawer Navigation */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-[#24150F] border-b border-[#B58A4F]/30 px-6 py-6 shadow-2xl space-y-4 text-center">
+          <Link
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-serif tracking-widest uppercase text-[#F3E5D2] hover:text-[#B58A4F] py-2"
+          >
+            HOME
+          </Link>
+          <Link
+            to="/shop"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-serif tracking-widest uppercase text-[#F3E5D2] hover:text-[#B58A4F] py-2"
+          >
+            COLLECTION
+          </Link>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              scrollToSection('story');
+            }}
+            className="block w-full text-sm font-serif tracking-widest uppercase text-[#F3E5D2] hover:text-[#B58A4F] py-2"
+          >
+            OUR STORY
+          </button>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              scrollToSection('contact');
+            }}
+            className="block w-full text-sm font-serif tracking-widest uppercase text-[#F3E5D2] hover:text-[#B58A4F] py-2"
+          >
+            CONTACT
+          </button>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              if (onOpenQuiz) onOpenQuiz();
+            }}
+            className="w-full py-3 px-4 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] text-[#24150F] text-xs font-serif uppercase tracking-widest font-bold rounded-lg shadow-gold-glow"
+          >
+            Take Scent Profiler
+          </button>
+        </div>
+      )}
     </header>
   );
 }

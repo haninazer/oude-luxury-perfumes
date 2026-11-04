@@ -4,12 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-desert-ivory text-oud-espresso selection:bg-gold-antique selection:text-white font-sans;
+    @apply bg-[#1C100B] text-[#F3E5D2] selection:bg-[#B58A4F] selection:text-[#24150F] font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-wide;
+    @apply font-serif tracking-wide text-[#F3E5D2];
   }
 }
 
@@ -19,7 +19,7 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #24150F;
+  background: #1C100B;
 }
 ::-webkit-scrollbar-thumb {
   background: #B58A4F;
@@ -41,20 +41,6 @@
     85% 10%,
     100% 20%,
     100% 100%
-  );
-}
-
-.arabian-arch-inverted {
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 80%,
-    85% 90%,
-    65% 97%,
-    50% 100%,
-    35% 97%,
-    15% 90%,
-    0% 80%
   );
 }
 
@@ -80,22 +66,22 @@
   background: rgba(36, 21, 15, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(181, 138, 79, 0.2);
+  border: 1px solid rgba(181, 138, 79, 0.25);
 }
 
-.glass-sand {
-  background: rgba(243, 229, 210, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(181, 138, 79, 0.3);
+.glass-card {
+  background: rgba(45, 27, 19, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(181, 138, 79, 0.25);
 }
 
 /* Subtle gold border glow */
 .gold-border-glow {
-  border: 1px solid rgba(181, 138, 79, 0.3);
+  border: 1px solid rgba(181, 138, 79, 0.35);
   transition: all 0.3s ease;
 }
 .gold-border-glow:hover {
-  border-color: rgba(181, 138, 79, 0.8);
-  box-shadow: 0 0 20px rgba(181, 138, 79, 0.25);
+  border-color: rgba(181, 138, 79, 0.85);
+  box-shadow: 0 0 25px rgba(181, 138, 79, 0.3);
 }

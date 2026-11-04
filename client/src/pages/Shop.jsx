@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, SlidersHorizontal, RotateCcw, Sparkles } from 'lucide-react';
+import { Search, Filter, RotateCcw } from 'lucide-react';
 import { productApi } from '../services/api.js';
 import ProductCard from '../components/ProductCard.jsx';
 import QuickViewModal from '../components/QuickViewModal.jsx';
@@ -93,15 +93,15 @@ export default function Shop() {
   const hasActiveFilters = currentCategory !== 'All' || searchQuery.trim() !== '' || maxPrice < 6000 || sortBy !== 'featured';
 
   return (
-    <div className="bg-[#F3E5D2] min-h-screen text-[#24150F] pb-24">
+    <div className="bg-[#1C100B] min-h-screen text-[#F3E5D2] pb-24 pt-20">
       {/* Header Banner */}
-      <div className="bg-[#24150F] text-[#F3E5D2] py-14 px-4 sm:px-6 lg:px-8 border-b border-[#B58A4F]/30 text-center relative overflow-hidden">
+      <div className="bg-gradient-to-b from-[#24150F] to-[#1C100B] text-[#F3E5D2] py-16 px-4 sm:px-6 lg:px-8 border-b border-[#B58A4F]/30 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-          <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F] block">
-            The OUDÉ Anthology
+          <span className="text-xs uppercase font-serif tracking-[0.28em] text-[#B58A4F] block">
+            The OUDÉ Fragrance Anthology
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
-            The Fragrance Collection
+          <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-[#F3E5D2]">
+            The Luxury Collection
           </h1>
           <p className="text-xs sm:text-sm text-[#D8B995]/80 max-w-xl mx-auto font-light leading-relaxed">
             Discover our seven original creations, crafted with aged Cambodian oud, sensual amber, and pure botanical distillates.
@@ -111,7 +111,7 @@ export default function Shop() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         {/* Search, Filter & Sort Bar */}
-        <div className="bg-[#24150F] text-[#F3E5D2] p-6 rounded-2xl border border-[#B58A4F]/30 shadow-xl mb-10 space-y-6">
+        <div className="bg-[#24150F] text-[#F3E5D2] p-6 rounded-2xl border border-[#B58A4F]/30 shadow-2xl mb-10 space-y-6">
           
           {/* Top Row: Search & Sort */}
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
@@ -123,7 +123,7 @@ export default function Shop() {
                 placeholder="Search notes, categories, character..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/50 pl-10 pr-4 py-2 text-xs rounded border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                className="w-full bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/50 pl-10 pr-4 py-2.5 text-xs rounded-lg border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
               />
             </div>
 
@@ -132,7 +132,7 @@ export default function Shop() {
               {/* Max Price Slider */}
               <div className="flex items-center space-x-2 text-xs">
                 <span className="text-[#D8B995]">Max Price:</span>
-                <span className="font-mono text-[#B58A4F] font-bold">₹{maxPrice.toLocaleString('en-IN')}</span>
+                <span className="font-mono text-[#D4AF37] font-bold">₹{maxPrice.toLocaleString('en-IN')}</span>
                 <input
                   type="range"
                   min="3499"
@@ -150,7 +150,7 @@ export default function Shop() {
                 <select
                   value={sortBy}
                   onChange={handleSortChange}
-                  className="bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded text-xs border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
+                  className="bg-[#352014] text-[#F3E5D2] px-3 py-2 rounded-lg text-xs border border-[#B58A4F]/30 focus:outline-none focus:border-[#B58A4F]"
                 >
                   <option value="featured">Featured Collection</option>
                   <option value="price_asc">Price: Low to High</option>
@@ -180,9 +180,9 @@ export default function Shop() {
             </span>
             <button
               onClick={() => handleCategoryChange('All')}
-              className={`px-3 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
                 currentCategory === 'All'
-                  ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow'
+                  ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow-gold-glow'
                   : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
               }`}
             >
@@ -192,9 +192,9 @@ export default function Shop() {
               <button
                 key={c.category}
                 onClick={() => handleCategoryChange(c.category)}
-                className={`px-3 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-colors ${
                   currentCategory === c.category
-                    ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow'
+                    ? 'bg-[#B58A4F] text-[#24150F] font-bold shadow-gold-glow'
                     : 'bg-[#352014] text-[#D8B995] hover:bg-[#352014]/80 border border-[#B58A4F]/30'
                 }`}
               >
@@ -205,13 +205,13 @@ export default function Shop() {
         </div>
 
         {/* Results Header */}
-        <div className="flex justify-between items-center mb-6 text-xs text-[#352014]/80">
+        <div className="flex justify-between items-center mb-6 text-xs text-[#D8B995]/80">
           <span>
-            Showing <strong className="text-[#24150F] font-serif font-bold text-sm">{products.length}</strong> Arabian Luxury Fragrance(s)
+            Showing <strong className="text-[#F3E5D2] font-serif font-bold text-sm">{products.length}</strong> Arabian Luxury Fragrance(s)
           </span>
           {searchQuery && (
             <span>
-              Search query: <span className="font-serif italic text-[#B58A4F]">"{searchQuery}"</span>
+              Search query: <span className="font-serif italic text-[#D4AF37]">"{searchQuery}"</span>
             </span>
           )}
         </div>
@@ -220,7 +220,7 @@ export default function Shop() {
         {loading ? (
           <div className="py-24 text-center">
             <div className="w-10 h-10 border-2 border-[#B58A4F] border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="font-serif text-sm text-[#352014] mt-3">Filtering Fragrances...</p>
+            <p className="font-serif text-sm text-[#D8B995] mt-3">Filtering Fragrances...</p>
           </div>
         ) : products.length === 0 ? (
           <div className="bg-[#24150F] text-[#F3E5D2] rounded-2xl p-12 text-center border border-[#B58A4F]/30 max-w-lg mx-auto space-y-4">

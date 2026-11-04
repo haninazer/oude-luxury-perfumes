@@ -27,7 +27,7 @@ export default function App() {
     <AuthProvider>
       <CartProvider>
         <Router>
-          <div className="flex flex-col min-h-screen bg-[#F3E5D2] text-[#24150F]">
+          <div className="flex flex-col min-h-screen bg-[#1C100B] text-[#F3E5D2]">
             {/* Global Navbar */}
             <Navbar onOpenQuiz={() => setIsQuizOpen(true)} />
 
