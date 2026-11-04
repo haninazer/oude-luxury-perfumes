@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-desert-ivory text-oud-espresso selection:bg-gold-antique selection:text-white font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-wide;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #24150F;
+}
+::-webkit-scrollbar-thumb {
+  background: #B58A4F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Luxury Arabian Arch Motif */
+.arabian-arch {
+  clip-path: polygon(
+    0% 100%,
+    0% 20%,
+    15% 10%,
+    35% 3%,
+    50% 0%,
+    65% 3%,
+    85% 10%,
+    100% 20%,
+    100% 100%
+  );
+}
+
+.arabian-arch-inverted {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 80%,
+    85% 90%,
+    65% 97%,
+    50% 100%,
+    35% 97%,
+    15% 90%,
+    0% 80%
+  );
+}
+
+/* Subtle Shimmer Effect */
+.gold-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #B58A4F 0%,
+    #F7E7CE 25%,
+    #D4AF37 50%,
+    #F7E7CE 75%,
+    #B58A4F 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Luxury Glassmorphism */
+.glass-oud {
+  background: rgba(36, 21, 15, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(181, 138, 79, 0.2);
+}
+
+.glass-sand {
+  background: rgba(243, 229, 210, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(181, 138, 79, 0.3);
+}
+
+/* Subtle gold border glow */
+.gold-border-glow {
+  border: 1px solid rgba(181, 138, 79, 0.3);
+  transition: all 0.3s ease;
+}
+.gold-border-glow:hover {
+  border-color: rgba(181, 138, 79, 0.8);
+  box-shadow: 0 0 20px rgba(181, 138, 79, 0.25);
+}

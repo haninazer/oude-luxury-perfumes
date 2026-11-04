@@ -1,0 +1,204 @@
+import React, { useEffect } from 'react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { Sparkles, CheckCircle2, Package, Printer, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import confetti from 'canvas-confetti';
+
+export default function OrderConfirmation() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const order = location.state?.order;
+
+  useEffect(() => {
+    // Luxury confetti burst
+    if (order) {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#B58A4F', '#D4AF37', '#F3E5D2', '#C49A70']
+      });
+    }
+  }, [order]);
+
+  if (!order) {
+    return (
+      <div className="min-h-[70vh] bg-[#F3E5D2] flex items-center justify-center px-4">
+        <div className="bg-[#24150F] text-[#F3E5D2] p-8 rounded-2xl border border-[#B58A4F]/30 max-w-md text-center space-y-4">
+          <p className="font-serif text-2xl">No Order Session Found</p>
+          <p className="text-xs text-[#D8B995]/70">
+            If you have placed an order, you can view its live status under your profile.
+          </p>
+          <Link
+            to="/shop"
+            className="inline-block px-6 py-2.5 bg-[#B58A4F] text-[#24150F] text-xs font-semibold uppercase tracking-wider rounded"
+          >
+            Explore Fragrances
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  return (
+    <div className="bg-[#F3E5D2] min-h-screen text-[#24150F] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto space-y-8">
+        
+        {/* Celebration Header */}
+        <div className="text-center space-y-3">
+          <div className="w-16 h-16 rounded-full bg-[#24150F] border border-[#B58A4F] mx-auto flex items-center justify-center text-[#D4AF37] shadow-gold-glow">
+            <CheckCircle2 className="w-8 h-8" />
+          </div>
+          <span className="text-xs uppercase font-mono tracking-widest text-[#B58A4F] block">
+            Order Confirmed & Allocated
+          </span>
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#24150F]">
+            The Essence of Arabian Luxury is En Route
+          </h1>
+          <p className="text-xs sm:text-sm text-[#352014]/80 max-w-lg mx-auto font-light leading-relaxed">
+            Thank you, {order.customer_name}. Your flacon is being prepared and hand-sealed by our master perfumers in our temperature-controlled vault.
+          </p>
+        </div>
+
+        {/* The Luxury Receipt Card */}
+        <div className="bg-[#24150F] text-[#F3E5D2] rounded-3xl border border-[#B58A4F]/40 shadow-2xl overflow-hidden p-6 sm:p-10 space-y-8">
+          
+          {/* Top Bar: Order & Tracking ID */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#B58A4F]/20 gap-4">
+            <div>
+              <span className="text-[10px] uppercase font-mono text-[#D8B995]/70 block">
+                White-Glove Tracking ID
+              </span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-[#D4AF37]">
+                {order.tracking_code || `OUDE-${new Date().getFullYear()}-${String(order.id).padStart(5, '0')}`}
+              </span>
+            </div>
+
+            <div className="text-left sm:text-right">
+              <span className="text-[10px] uppercase font-mono text-[#D8B995]/70 block">
+                Order Status
+              </span>
+              <span className="inline-block px-3 py-1 bg-[#352014] text-[#D8B995] border border-[#B58A4F]/40 rounded text-xs font-serif capitalize">
+                ● {order.status || 'Processing'}
+              </span>
+            </div>
+          </div>
+
+          {/* Delivery & Payment Metadata Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-[#D8B995]/90 border-b border-[#B58A4F]/20 pb-6">
+            <div>
+              <span className="text-[#B58A4F] font-serif font-semibold text-sm block mb-1">
+                Recipient Details
+              </span>
+              <p className="text-[#F3E5D2] font-medium">{order.customer_name}</p>
+              <p>{order.customer_email}</p>
+              <p>{order.phone}</p>
+            </div>
+
+            <div>
+              <span className="text-[#B58A4F] font-serif font-semibold text-sm block mb-1">
+                White-Glove Courier Address
+              </span>
+              <p className="text-[#F3E5D2]">{order.shipping_address}</p>
+              <p>{order.city}, PIN {order.postal_code}</p>
+              <p className="mt-1 text-[11px] text-[#D8B995]/70 italic">Payment: {order.payment_method}</p>
+            </div>
+          </div>
+
+          {/* Order Items Table */}
+          <div className="space-y-4">
+            <h3 className="font-serif text-lg font-bold text-[#F3E5D2]">
+              Acquired Fragrances
+            </h3>
+            
+            <div className="divide-y divide-[#B58A4F]/15">
+              {order.items?.map((item, idx) => (
+                <div key={idx} className="py-4 flex items-center justify-between text-xs">
+                  <div className="flex items-center space-x-3 min-w-0">
+                    {item.image_url && (
+                      <img
+                        src={item.image_url}
+                        alt={item.name || item.product_name}
+                        className="w-12 h-14 object-cover rounded border border-[#B58A4F]/30 bg-[#352014] flex-shrink-0"
+                      />
+                    )}
+                    <div className="min-w-0">
+                      <p className="font-serif font-bold text-base text-[#F3E5D2] truncate">
+                        {item.name || item.product_name}
+                      </p>
+                      <p className="text-[#D8B995]/70">
+                        Qty: {item.quantity} • 100ml Eau De Parfum Extrait
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="font-mono text-sm font-bold text-[#B58A4F]">
+                    ₹{(Number(item.price) * item.quantity).toLocaleString('en-IN')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Financial Breakdown (Server Calculated) */}
+          <div className="bg-[#352014]/60 p-5 rounded-2xl border border-[#B58A4F]/25 space-y-2 text-xs text-[#D8B995]">
+            <div className="flex justify-between">
+              <span>Subtotal</span>
+              <span className="font-mono text-[#F3E5D2]">₹{Number(order.subtotal).toLocaleString('en-IN')}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>White-Glove Courier</span>
+              <span className="font-mono text-emerald-400">
+                {Number(order.shipping_fee) === 0 ? 'COMPLIMENTARY' : `₹${Number(order.shipping_fee).toLocaleString('en-IN')}`}
+              </span>
+            </div>
+            {Number(order.discount) > 0 && (
+              <div className="flex justify-between text-emerald-400">
+                <span>Privilege Discount</span>
+                <span className="font-mono">-₹{Number(order.discount).toLocaleString('en-IN')}</span>
+              </div>
+            )}
+            <div className="pt-2 border-t border-[#B58A4F]/25 flex justify-between items-center text-base font-bold text-[#F3E5D2]">
+              <span className="font-serif">Total Invoiced</span>
+              <span className="font-serif text-2xl text-[#D4AF37]">
+                ₹{Number(order.total).toLocaleString('en-IN')}
+              </span>
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <button
+              onClick={handlePrint}
+              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-lg text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
+            >
+              <Printer className="w-4 h-4 text-[#B58A4F]" />
+              <span>Print Official Invoice</span>
+            </button>
+
+            <Link
+              to="/profile"
+              className="px-6 py-3 bg-[#352014] hover:bg-[#24150F] text-[#F3E5D2] border border-[#B58A4F]/40 rounded-lg text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center space-x-2"
+            >
+              <Package className="w-4 h-4 text-[#B58A4F]" />
+              <span>Track in My Account</span>
+            </Link>
+
+            <Link
+              to="/shop"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-[#B58A4F] to-[#D4AF37] hover:brightness-110 text-[#24150F] rounded-lg text-xs uppercase tracking-widest font-bold transition-all shadow-gold-glow flex items-center justify-center space-x-2"
+            >
+              <span>Explore More Scents</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}
