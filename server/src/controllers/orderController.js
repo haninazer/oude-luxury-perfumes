@@ -132,9 +132,9 @@ export async function createOrder(req, res) {
         [orderId, item.product_id, item.name, item.price, item.quantity, item.image_url]
       );
 
-      // Deduct stock
+      // Deduct stock (portable SQL for SQLite & PostgreSQL)
       await db.query(
-        'UPDATE products SET stock = GREATEST(0, stock - $1) WHERE id = $2',
+        'UPDATE products SET stock = CASE WHEN stock >= $1 THEN stock - $1 ELSE 0 END WHERE id = $2',
         [item.quantity, item.product_id]
       );
     }

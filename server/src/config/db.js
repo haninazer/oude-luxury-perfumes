@@ -40,6 +40,13 @@ if (!pool) {
   sqliteDb = new Database(dbPath);
   sqliteDb.pragma('journal_mode = WAL');
   sqliteDb.pragma('foreign_keys = ON');
+  // Register PostgreSQL helper functions in SQLite
+  try {
+    sqliteDb.function('GREATEST', (...args) => Math.max(...args));
+    sqliteDb.function('LEAST', (...args) => Math.min(...args));
+  } catch (fnErr) {
+    // Ignore if already registered
+  }
   console.log(`📦 Using local SQLite database at: ${dbPath}`);
 }
 

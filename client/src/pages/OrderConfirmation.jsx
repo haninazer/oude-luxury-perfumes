@@ -172,7 +172,7 @@ export default function OrderConfirmation() {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row gap-4 pt-2 no-print">
             <button
               onClick={handlePrint}
               className="px-6 py-3.5 bg-[#140A06] hover:bg-[#1E0F09] text-[#F3E5D2] border border-[#D4AF37]/40 rounded-xl text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center space-x-2"

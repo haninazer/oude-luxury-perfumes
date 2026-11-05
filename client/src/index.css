@@ -330,3 +330,31 @@
 .hero-flacon-twinkle-3 {
   animation: particleTwinkle 4.2s ease-in-out 2.6s infinite;
 }
+
+/* 1-Click Luxury Invoice Print Media Styles */
+@media print {
+  nav, footer, .no-print, button:not(.print-show) {
+    display: none !important;
+  }
+
+  body, .luxury-canvas-bg {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+
+  .luxury-glass-panel, .luxury-vitrine, .bg-\[\#120804\], .bg-\[\#24150F\] {
+    background: #ffffff !important;
+    border: 1px solid #d4af37 !important;
+    color: #1a1a1a !important;
+    box-shadow: none !important;
+  }
+
+  .gold-foil-text, .text-\[\#F3E5D2\], .text-\[\#D4AF37\] {
+    color: #8c6d23 !important;
+    -webkit-text-fill-color: #8c6d23 !important;
+  }
+
+  .text-\[\#D8B995\], .text-\[\#D8B995\]\/90, .text-\[\#D8B995\]\/70 {
+    color: #4a4a4a !important;
+  }
+}

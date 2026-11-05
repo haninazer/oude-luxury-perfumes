@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { User, Package, MapPin, Phone, Mail, Shield, CheckCircle, Clock, Truck, AlertCircle } from 'lucide-react';
+import { User, Package, MapPin, Phone, Mail, Shield, CheckCircle, Clock, Truck, AlertCircle, Printer } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { authApi, orderApi } from '../services/api.js';
 
@@ -209,17 +209,30 @@ export default function Profile() {
                     key={ord.id}
                     className="bg-[#24150F] text-[#F3E5D2] rounded-2xl border border-[#B58A4F]/30 p-6 shadow-xl space-y-4"
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#B58A4F]/20 gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#B58A4F]/20 gap-3">
                       <div>
-                        <span className="font-mono text-sm font-bold text-[#D4AF37]">
-                          Order #{ord.id}
-                        </span>
-                        <span className="text-[11px] text-[#D8B995]/70 block">
+                        <div className="flex items-center space-x-2">
+                          <span className="font-mono text-sm font-bold text-[#D4AF37]">
+                            Order #{ord.id}
+                          </span>
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/60 text-[#D4AF37] border border-[#D4AF37]/30">
+                            Tracking: OUDE-2026-{String(ord.id).padStart(5, '0')}
+                          </span>
+                        </div>
+                        <span className="text-[11px] text-[#D8B995]/70 block mt-1">
                           Placed on {new Date(ord.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </span>
                       </div>
 
                       <div className="flex items-center space-x-3">
+                        <button
+                          onClick={() => window.print()}
+                          className="px-3 py-1.5 bg-[#140A06] hover:bg-[#1E0F09] text-[#F3E5D2] border border-[#D4AF37]/40 rounded-lg text-[11px] uppercase tracking-wider font-semibold transition-all flex items-center space-x-1.5 shadow"
+                          title="Print official tax invoice for this order"
+                        >
+                          <Printer className="w-3.5 h-3.5 text-[#D4AF37]" />
+                          <span>Print Invoice</span>
+                        </button>
                         <span className={`text-[10px] uppercase font-mono px-2.5 py-1 rounded-lg border capitalize ${getStatusColor(ord.status)}`}>
                           ● {ord.status}
                         </span>
