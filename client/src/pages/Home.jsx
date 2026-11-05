@@ -82,27 +82,28 @@ export default function Home({ onOpenQuiz }) {
               </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="hero-animate-subtitle text-sm sm:text-base md:text-lg text-[#352014] font-medium leading-relaxed max-w-md drop-shadow-[0_1px_1px_rgba(255,230,190,0.3)]">
+            {/* Subtitle - High Contrast, Prominent & Crystal Clear */}
+            <p className="hero-animate-subtitle text-base sm:text-lg md:text-xl text-[#140804] font-semibold leading-relaxed max-w-lg drop-shadow-[0_1px_2px_rgba(255,245,225,0.95)]">
               A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
             </p>
 
             {/* CTA Buttons */}
-            <div className="hero-animate-cta pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
+            <div className="hero-animate-cta pt-3 sm:pt-5 flex flex-wrap gap-4 items-center">
               <Link
                 to="/shop"
-                className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-[0_8px_30px_rgba(181,138,79,0.45)] hover:scale-105 hover:border hover:border-[#D4AF37]/60"
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-[#1F100A] hover:bg-[#2C1810] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-[0_8px_30px_rgba(181,138,79,0.45)] hover:scale-105 hover:border hover:border-[#D4AF37]/60"
               >
                 <span>DISCOVER THE COLLECTION</span>
                 <ArrowUpRight className="w-4 h-4 text-[#D8B995] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#D4AF37] transition-all" />
               </Link>
 
+              {/* Scent Profiler Button - Solid High-Visibility Luxury Obsidian & 24K Gold */}
               <button
                 onClick={onOpenQuiz}
-                className="inline-flex items-center space-x-2 px-6 py-4 bg-[#24150F]/15 hover:bg-[#24150F]/30 hover:border-[#24150F] hover:scale-105 text-[#24150F] border border-[#24150F]/40 backdrop-blur-sm text-xs font-serif uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow hover:shadow-lg active:scale-95"
+                className="inline-flex items-center space-x-2.5 px-8 py-4 bg-[#1F100A] hover:bg-[#2C1810] text-[#F3E5D2] hover:text-[#D4AF37] border-2 border-[#D4AF37] text-xs font-serif uppercase tracking-[0.22em] font-bold shadow-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgba(212,175,55,0.45)] hover:scale-105 active:scale-95 group"
               >
-                <Compass className="w-3.5 h-3.5 text-[#352014] hover:rotate-45 transition-transform" />
-                <span>Scent Profiler</span>
+                <Compass className="w-4 h-4 text-[#D4AF37] group-hover:rotate-45 transition-transform" />
+                <span>SCENT PROFILER</span>
               </button>
             </div>
 
