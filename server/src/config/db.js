@@ -42,8 +42,8 @@ if (!pool) {
   sqliteDb.pragma('foreign_keys = ON');
   // Register PostgreSQL helper functions in SQLite
   try {
-    sqliteDb.function('GREATEST', (...args) => Math.max(...args));
-    sqliteDb.function('LEAST', (...args) => Math.min(...args));
+    sqliteDb.function('GREATEST', { varargs: true }, (...args) => Math.max(...args));
+    sqliteDb.function('LEAST', { varargs: true }, (...args) => Math.min(...args));
   } catch (fnErr) {
     // Ignore if already registered
   }
@@ -68,8 +68,12 @@ export async function query(text, params = []) {
       client.release();
     }
   } else {
-    // Translate $1, $2, $3 to ? for SQLite
-    let sqliteQuery = text.replace(/\$(\d+)/g, '?');
+    // Translate $1, $2, $3 to ? for SQLite and remap parameter indices
+    const paramIndices = [];
+    let sqliteQuery = text.replace(/\$(\d+)/g, (_, idx) => {
+      paramIndices.push(parseInt(idx, 10) - 1);
+      return '?';
+    });
 
     // Handle standard PostgreSQL syntax differences for SQLite
     // e.g. NOW() -> CURRENT_TIMESTAMP
@@ -88,22 +92,27 @@ export async function query(text, params = []) {
       return val;
     });
 
+    // Map parameters to their respective placeholder positions
+    const boundParams = paramIndices.length > 0
+      ? paramIndices.map(i => sanitizedParams[i])
+      : sanitizedParams;
+
     try {
       if (isSelect) {
         const stmt = sqliteDb.prepare(sqliteQuery);
-        const rows = stmt.all(...sanitizedParams);
+        const rows = stmt.all(...boundParams);
         return { rows, rowCount: rows.length };
       } else if (hasReturning) {
         // SQLite 3.35+ supports RETURNING
         try {
           const stmt = sqliteDb.prepare(sqliteQuery);
-          const rows = stmt.all(...sanitizedParams);
+          const rows = stmt.all(...boundParams);
           return { rows, rowCount: rows.length };
         } catch (retErr) {
           // Fallback if older SQLite without RETURNING
           const cleanQuery = sqliteQuery.replace(/RETURNING\s+[\w\s,*]+/i, '');
           const stmt = sqliteDb.prepare(cleanQuery);
-          const info = stmt.run(...sanitizedParams);
+          const info = stmt.run(...boundParams);
           return {
             rows: [{ id: info.lastInsertRowid }],
             rowCount: info.changes,
@@ -111,7 +120,7 @@ export async function query(text, params = []) {
         }
       } else {
         const stmt = sqliteDb.prepare(sqliteQuery);
-        const info = stmt.run(...sanitizedParams);
+        const info = stmt.run(...boundParams);
         return {
           rows: [],
           rowCount: info.changes,
