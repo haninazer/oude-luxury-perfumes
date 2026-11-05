@@ -82,8 +82,8 @@ export default function Home({ onOpenQuiz }) {
               </span>
             </h1>
 
-            {/* Subtitle - High Contrast, Prominent & Crystal Clear */}
-            <p className="hero-animate-subtitle text-base sm:text-lg md:text-xl text-[#140804] font-semibold leading-relaxed max-w-lg drop-shadow-[0_1px_2px_rgba(255,245,225,0.95)]">
+            {/* Subtitle - Refined Editorial Luxury Serif Typography */}
+            <p className="hero-animate-subtitle font-serif text-lg sm:text-xl md:text-[22px] text-[#140804] font-medium leading-relaxed max-w-lg drop-shadow-[0_1px_2px_rgba(255,245,225,0.95)]">
               A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
             </p>
 
