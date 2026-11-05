@@ -63,26 +63,32 @@ export default function Home({ onOpenQuiz }) {
           <div className="max-w-xl space-y-6 sm:space-y-8">
             
             {/* Pre-Heading */}
-            <div className="flex items-center space-x-2">
-              <span className="text-[11px] sm:text-xs uppercase font-serif tracking-[0.28em] text-[#352014] font-semibold drop-shadow-[0_1px_1px_rgba(255,230,190,0.5)]">
+            <div className="flex items-center space-x-2 overflow-hidden">
+              <span className="hero-animate-preheading text-[11px] sm:text-xs uppercase font-serif tracking-[0.28em] text-[#352014] font-semibold drop-shadow-[0_1px_1px_rgba(255,230,190,0.5)]">
                 OUDÉ — THE ART OF ARABIAN PERFUMERY
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#24150F] leading-[1.05] tracking-tight drop-shadow-[0_1px_2px_rgba(255,230,190,0.4)]">
-              THE ESSENCE OF<br />
-              ARABIAN<br />
-              LUXURY.
+              <span className="block overflow-hidden pb-1">
+                <span className="hero-animate-line-1">THE ESSENCE OF</span>
+              </span>
+              <span className="block overflow-hidden pb-1">
+                <span className="hero-animate-line-2">ARABIAN</span>
+              </span>
+              <span className="block overflow-hidden pb-1">
+                <span className="hero-animate-line-3">LUXURY.</span>
+              </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-[#352014] font-medium leading-relaxed max-w-md drop-shadow-[0_1px_1px_rgba(255,230,190,0.3)]">
+            <p className="hero-animate-subtitle text-sm sm:text-base md:text-lg text-[#352014] font-medium leading-relaxed max-w-md drop-shadow-[0_1px_1px_rgba(255,230,190,0.3)]">
               A curated journey through rare oud, precious woods and the timeless spirit of Arabia.
             </p>
 
             {/* CTA Buttons */}
-            <div className="pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
+            <div className="hero-animate-cta pt-2 sm:pt-4 flex flex-wrap gap-4 items-center">
               <Link
                 to="/shop"
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-[#24150F] hover:bg-[#352014] text-[#F3E5D2] font-serif text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 shadow-2xl group hover:shadow-[0_8px_30px_rgba(181,138,79,0.45)] hover:scale-105 hover:border hover:border-[#D4AF37]/60"

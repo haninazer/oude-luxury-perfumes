@@ -152,3 +152,95 @@
   border-color: rgba(212, 175, 55, 0.6);
   box-shadow: 0 20px 40px -10px rgba(181, 138, 79, 0.3);
 }
+
+/* ==========================================================================
+   EDITORIAL HERO STARTING TYPOGRAPHY ANIMATIONS
+   Masked slide-up and letter-spacing entrance reveal on initial page load
+   ========================================================================== */
+
+@keyframes heroTrackingIn {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.12em;
+    transform: translateY(10px);
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.28em;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroLineSlideUp {
+  0% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle single-run golden aura shimmer after text finishes landing */
+@keyframes heroTextAura {
+  0% {
+    filter: drop-shadow(0 1px 2px rgba(255, 230, 190, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.65)) drop-shadow(0 1px 2px rgba(255, 230, 190, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 1px 2px rgba(255, 230, 190, 0.4));
+  }
+}
+
+.hero-animate-preheading {
+  animation: heroTrackingIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.hero-animate-line-1 {
+  display: inline-block;
+  animation: 
+    heroLineSlideUp 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both,
+    heroTextAura 1.4s ease-out 1.2s 1;
+}
+
+.hero-animate-line-2 {
+  display: inline-block;
+  animation: 
+    heroLineSlideUp 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both,
+    heroTextAura 1.4s ease-out 1.35s 1;
+}
+
+.hero-animate-line-3 {
+  display: inline-block;
+  animation: 
+    heroLineSlideUp 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.66s both,
+    heroTextAura 1.4s ease-out 1.5s 1;
+}
+
+.hero-animate-subtitle {
+  animation: heroFadeInUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
+}
+
+.hero-animate-cta {
+  animation: heroFadeInUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+}
