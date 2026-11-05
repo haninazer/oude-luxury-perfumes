@@ -41,9 +41,13 @@ As required by the practical task guidelines, here is the detailed breakdown of 
 * **Problem on Reference Site:** Multi-step checkouts with slow page reloads cause high cart abandonment. Post-purchase confirmation is often a plain text notice without receipt details or tracking transparency.
 * **OUDÉ Solution & Why:** OUDÉ condenses checkout into an intuitive, single-page flow with auto-filled registered profile data, simulated payment options (Cards, UPI, COD), and server-side atomic inventory deductions. Upon placement, customers are greeted with a confetti celebration and a luxury receipt displaying an official tracking ID (`OUDE-2026-XXXXX`), itemized costs, delivery timeline, and a 1-click **"Print Official Invoice"** feature.
 
-### 4. Modern Arabian Fusion Aesthetic & Micro-Interactions
-* **Problem on Reference Site:** Generic e-commerce templates with jarring color clashes, cramped product grids, and lack of luxury atmosphere.
-* **OUDÉ Solution & Why:** Designed with an authentic **Modern Arabian Fusion** design system inspired by Arabian arches, desert sand dunes (`#D8B995`), antique gold accents (`#B58A4F`), deep aged oud (`#352014`), and dark espresso (`#24150F`). Elevated with Cormorant Garamond luxury headings, Amiri decorative Arabic typography, and responsive micro-interactions across mobile, tablet, and desktop screens.
+### 4. Haute Parfumerie Aesthetic, Bespoke Studio Flacons & Micro-Animations
+* **Problem on Reference Site:** Generic e-commerce templates with jarring color clashes, cramped product grids, generic stock perfume bottles (Chanel/Dior bottles placed as placeholders), and a complete lack of luxury atmosphere.
+* **OUDÉ Solution & Why:** Designed with an **Imperial Obsidian Black & 24K Liquid Gold Haute Parfumerie** design system inspired by Xerjoff and Amouage:
+  * **Bespoke Arabian Studio Flacon Photography:** All 7 perfumes feature custom-crafted, photorealistic Arabian flacons resting on black marble with intricate Islamic arabesque filigree and jewel-cut caps.
+  * **Editorial Masked Line-by-Line Typography Entrance Animation:** On page mount, each line of `THE ESSENCE OF ARABIAN LUXURY.` gracefully reveals from an overflow mask with high-fashion easing.
+  * **Hero Perfume Royal Levitation & Ambient Sunset Golden Aura:** The hero flacon gently floats with a synchronized ground plinth shadow and an ethereal sunset golden backlight pulsing behind the bottle.
+  * **Vitrine Cards with Radial Halos:** Product cards function as museum vitrines with ambient radial glows, 28% Extrait badges, and embossed 24K gold buttons (`.btn-gold-embossed`).
 
 ---
 
