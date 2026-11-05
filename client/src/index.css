@@ -244,3 +244,89 @@
 .hero-animate-cta {
   animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
 }
+
+/* ==========================================================================
+   HERO PERFUME FLACON ANIMATIONS
+   Royal entrance, ethereal golden aura breathing, synchronized plinth shadow & float
+   ========================================================================== */
+
+@keyframes flaconEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes flaconFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shadowBreathe {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-50%, 0) scale(0.85);
+    opacity: 0.5;
+  }
+}
+
+@keyframes flaconAuraPulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+
+@keyframes particleTwinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.6) translateY(0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15) translateY(-5px);
+  }
+}
+
+.hero-flacon-entrance {
+  animation: flaconEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.hero-flacon-float {
+  animation: flaconFloat 5s ease-in-out infinite;
+}
+
+.hero-flacon-shadow {
+  animation: shadowBreathe 5s ease-in-out infinite;
+}
+
+.hero-flacon-aura {
+  animation: flaconAuraPulse 4.5s ease-in-out infinite;
+}
+
+.hero-flacon-twinkle-1 {
+  animation: particleTwinkle 3.2s ease-in-out 0.5s infinite;
+}
+
+.hero-flacon-twinkle-2 {
+  animation: particleTwinkle 3.8s ease-in-out 1.8s infinite;
+}
+
+.hero-flacon-twinkle-3 {
+  animation: particleTwinkle 4.2s ease-in-out 2.6s infinite;
+}
