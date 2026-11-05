@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ShieldCheck, Truck, RefreshCw, Send, Heart } from 'lucide-react';
+import { Sparkles, ShieldCheck, Truck, RefreshCw, Send, Phone, Mail, Lock, Heart, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -16,80 +16,83 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#24150F] text-[#D8B995] border-t border-[#B58A4F]/30 pt-16 pb-8">
+    <footer className="bg-[#070302] text-[#D8B995] border-t border-[#D4AF37]/30 pt-20 pb-10 relative overflow-hidden">
+      {/* Top Ambient Golden Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-5xl h-48 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.14)_0%,transparent_70%)] pointer-events-none" />
+
       {/* Brand Values / Value Proposition Row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 border-b border-[#B58A4F]/20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center sm:text-left">
-          <div className="flex items-center space-x-4 p-3 rounded-xl hover:bg-[#352014]/60 hover:border hover:border-[#B58A4F]/30 hover:-translate-y-1 transition-all duration-300 cursor-default group">
-            <div className="w-12 h-12 rounded-full bg-[#352014] border border-[#B58A4F]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-115 flex-shrink-0 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 border-b border-[#D4AF37]/20 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="luxury-glass-panel flex items-center space-x-4 p-5 rounded-2xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+            <div className="w-12 h-12 rounded-xl bg-[#140A06] border border-[#D4AF37]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#D4AF37] group-hover:scale-110 flex-shrink-0 transition-transform shadow">
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-serif text-[#F3E5D2] group-hover:text-[#D4AF37] font-semibold text-base transition-colors">Rare Cambodian Oud</h4>
-              <p className="text-xs text-[#D8B995]/70">Pure natural oils aged to perfection.</p>
+              <h4 className="font-serif text-[#F3E5D2] group-hover:gold-foil-text font-bold text-base transition-colors">Rare Cambodian Oud</h4>
+              <p className="text-xs text-[#D8B995]/75 mt-0.5">Aged wild heartwood resin oils.</p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-3 rounded-xl hover:bg-[#352014]/60 hover:border hover:border-[#B58A4F]/30 hover:-translate-y-1 transition-all duration-300 cursor-default group">
-            <div className="w-12 h-12 rounded-full bg-[#352014] border border-[#B58A4F]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-115 flex-shrink-0 transition-all">
+          <div className="luxury-glass-panel flex items-center space-x-4 p-5 rounded-2xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+            <div className="w-12 h-12 rounded-xl bg-[#140A06] border border-[#D4AF37]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#D4AF37] group-hover:scale-110 flex-shrink-0 transition-transform shadow">
               <Truck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-serif text-[#F3E5D2] group-hover:text-[#D4AF37] font-semibold text-base transition-colors">White-Glove Delivery</h4>
-              <p className="text-xs text-[#D8B995]/70">Complimentary on orders over ₹3,000.</p>
+              <h4 className="font-serif text-[#F3E5D2] group-hover:gold-foil-text font-bold text-base transition-colors">White-Glove Delivery</h4>
+              <p className="text-xs text-[#D8B995]/75 mt-0.5">Complimentary across India (₹3,000+).</p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-3 rounded-xl hover:bg-[#352014]/60 hover:border hover:border-[#B58A4F]/30 hover:-translate-y-1 transition-all duration-300 cursor-default group">
-            <div className="w-12 h-12 rounded-full bg-[#352014] border border-[#B58A4F]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-115 flex-shrink-0 transition-all">
+          <div className="luxury-glass-panel flex items-center space-x-4 p-5 rounded-2xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+            <div className="w-12 h-12 rounded-xl bg-[#140A06] border border-[#D4AF37]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#D4AF37] group-hover:scale-110 flex-shrink-0 transition-transform shadow">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-serif text-[#F3E5D2] group-hover:text-[#D4AF37] font-semibold text-base transition-colors">100% Authentic Flacons</h4>
-              <p className="text-xs text-[#D8B995]/70">Hand-finished with gold metallic detailing.</p>
+              <h4 className="font-serif text-[#F3E5D2] group-hover:gold-foil-text font-bold text-base transition-colors">100% Authentic Flacons</h4>
+              <p className="text-xs text-[#D8B995]/75 mt-0.5">Hand-sealed with 24K filigree caps.</p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-3 rounded-xl hover:bg-[#352014]/60 hover:border hover:border-[#B58A4F]/30 hover:-translate-y-1 transition-all duration-300 cursor-default group">
-            <div className="w-12 h-12 rounded-full bg-[#352014] border border-[#B58A4F]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#B58A4F] group-hover:text-[#D4AF37] group-hover:scale-115 flex-shrink-0 transition-all">
+          <div className="luxury-glass-panel flex items-center space-x-4 p-5 rounded-2xl border border-[#D4AF37]/25 hover:border-[#D4AF37] hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] transition-all duration-300 cursor-default group">
+            <div className="w-12 h-12 rounded-xl bg-[#140A06] border border-[#D4AF37]/40 group-hover:border-[#D4AF37] flex items-center justify-center text-[#D4AF37] group-hover:scale-110 flex-shrink-0 transition-transform shadow">
               <RefreshCw className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-serif text-[#F3E5D2] group-hover:text-[#D4AF37] font-semibold text-base transition-colors">Olfactory Guarantee</h4>
-              <p className="text-xs text-[#D8B995]/70">Sample card included in every box.</p>
+              <h4 className="font-serif text-[#F3E5D2] group-hover:gold-foil-text font-bold text-base transition-colors">Olfactory Guarantee</h4>
+              <p className="text-xs text-[#D8B995]/75 mt-0.5">Sample vial included with each box.</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Footer Links & Newsletter */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
           
           {/* Brand Intro Column */}
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-serif tracking-[0.25em] text-[#F3E5D2] font-bold">
+              <span className="text-3xl font-serif tracking-[0.28em] gold-foil-text font-bold">
                 OUDÉ
               </span>
             </div>
-            <p className="text-xs tracking-[0.2em] uppercase text-[#B58A4F]">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#D4AF37] font-serif font-semibold">
               THE ESSENCE OF ARABIAN LUXURY
             </p>
-            <p className="text-sm text-[#D8B995]/80 leading-relaxed pr-6">
-              OUDÉ captures the grandeur of Arabian desert heritage. Designed for connoisseurs of timeless elegance, combining precious Cambodian oud, warm amber, and exquisite damask roses.
+            <p className="text-xs sm:text-sm text-[#D8B995]/85 leading-relaxed pr-4 font-light">
+              Capturing the timeless grandeur of Arabian desert heritage. Designed for discerning connoisseurs of haute parfumerie, blending sustainably harvested Cambodian agarwood, wild mountain roses, and golden amber.
             </p>
             <div className="pt-2 text-xs text-[#D8B995]/60 font-mono">
-              Curated for Luxury Fragrance Connoisseurs in India & the Gulf
+              Maison de Haute Parfumerie • Dubai, Grasse & Mumbai
             </div>
           </div>
 
           {/* Quick Collection Links */}
-          <div className="md:col-span-2 space-y-3">
-            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-semibold">
+          <div className="md:col-span-2 space-y-4">
+            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-bold gold-foil-text">
               The Seven Scents
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-xs">
               <li><Link to="/product/1" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">Oud Royal</Link></li>
               <li><Link to="/product/2" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">Desert Bloom</Link></li>
               <li><Link to="/product/3" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">Amber Noir</Link></li>
@@ -101,66 +104,79 @@ export default function Footer() {
           </div>
 
           {/* Client Concierge */}
-          <div className="md:col-span-2 space-y-3">
-            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-semibold">
+          <div className="md:col-span-2 space-y-4">
+            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-bold gold-foil-text">
               Concierge
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-xs">
               <li><Link to="/shop" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">All Perfumes</Link></li>
               <li><Link to="/profile" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">Track Orders</Link></li>
               <li><Link to="/login" className="hover:text-[#D4AF37] hover:translate-x-1.5 transition-all duration-200 inline-block">Client Account</Link></li>
-              <li><Link to="/admin" className="text-[#D4AF37] hover:underline hover:translate-x-1.5 transition-all duration-200 inline-block font-medium">Admin Portal</Link></li>
-              <li><span className="text-[#D8B995]/60">Tel: +91 98765 43210</span></li>
-              <li><span className="text-[#D8B995]/60">Email: concierge@oude.com</span></li>
+              <li><Link to="/admin" className="text-[#D4AF37] hover:underline hover:translate-x-1.5 transition-all duration-200 inline-block font-semibold">Admin Portal</Link></li>
+              <li className="pt-2">
+                <a href="tel:+919876543210" className="flex items-center space-x-1.5 text-[#D8B995]/80 hover:text-[#D4AF37] transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span>+91 98765 43210</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:concierge@oude.com" className="flex items-center space-x-1.5 text-[#D8B995]/80 hover:text-[#D4AF37] transition-colors">
+                  <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span>concierge@oude.com</span>
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* VIP Scent Club Newsletter */}
           <div className="md:col-span-4 space-y-4">
-            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-semibold">
+            <h5 className="font-serif text-[#F3E5D2] text-sm tracking-wider uppercase font-bold gold-foil-text">
               The OUDÉ Private Circle
             </h5>
-            <p className="text-xs text-[#D8B995]/80 leading-relaxed">
-              Subscribe to receive exclusive access to private reserve batches, olfactory masterclasses, and a 10% welcome privilege.
+            <p className="text-xs text-[#D8B995]/85 leading-relaxed font-light">
+              Subscribe to receive exclusive access to private reserve batches, olfactory masterclasses, and a 10% welcome privilege code.
             </p>
             {subscribed ? (
-              <div className="p-3 bg-[#352014] border border-[#B58A4F] rounded text-xs text-[#F3E5D2] flex items-center space-x-2">
-                <Sparkles className="w-4 h-4 text-[#B58A4F]" />
-                <span>Welcome to the Circle. Use code <strong>OUDE10</strong> at checkout.</span>
+              <div className="p-4 bg-[#140A06] border border-[#D4AF37] rounded-xl text-xs text-[#F3E5D2] flex items-center space-x-2.5 shadow-lg">
+                <Sparkles className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                <span>Welcome to the Private Circle. Use privilege code <strong className="gold-foil-text">OUDE10</strong> at checkout.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex space-x-2">
+              <form onSubmit={handleSubscribe} className="flex gap-2">
                 <input
                   type="email"
                   required
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-[#352014] text-[#F3E5D2] placeholder-[#D8B995]/40 px-3.5 py-2.5 rounded text-xs border border-[#B58A4F]/30 hover:border-[#B58A4F] focus:outline-none focus:border-[#D4AF37] transition-colors"
+                  className="flex-1 bg-[#120804] text-[#F3E5D2] placeholder-[#D8B995]/40 px-4 py-3 rounded-xl text-xs border border-[#D4AF37]/35 hover:border-[#D4AF37] focus:outline-none focus:border-[#D4AF37] focus:shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all"
                 />
                 <button
                   type="submit"
-                  className="bg-[#B58A4F] hover:bg-[#D4AF37] hover:scale-105 active:scale-95 text-[#24150F] px-4 py-2.5 rounded text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow hover:shadow-gold-glow flex items-center space-x-1"
+                  className="btn-gold-embossed px-6 py-3 rounded-xl text-xs font-serif uppercase tracking-wider font-bold transition-all shadow-xl flex items-center space-x-1.5 flex-shrink-0"
                 >
                   <span>Join</span>
                   <Send className="w-3.5 h-3.5" />
                 </button>
               </form>
             )}
-            <div className="text-[11px] text-[#D8B995]/60">
-              Protected by 256-bit SSL encryption. We honor your privacy.
+            
+            {/* Security Guarantee Row */}
+            <div className="flex items-center space-x-2 text-[11px] text-[#D8B995]/70 pt-2 border-t border-[#D4AF37]/15">
+              <Lock className="w-3.5 h-3.5 text-[#D4AF37] flex-shrink-0" />
+              <span>Protected by 256-bit SSL encryption. We honor your privacy.</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Copyright & Disclaimer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-[#B58A4F]/20 flex flex-col sm:flex-row items-center justify-between text-xs text-[#D8B995]/60 space-y-3 sm:space-y-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-[#D4AF37]/20 flex flex-col sm:flex-row items-center justify-between text-xs text-[#D8B995]/60 space-y-3 sm:space-y-0 relative z-10">
         <div>
           © {new Date().getFullYear()} OUDÉ – Arabian Luxury Perfumes. Built for Full Stack Developer Practical Assessment.
         </div>
         <div className="flex items-center space-x-4">
-          <span className="font-serif italic text-[#B58A4F]">Crafted with passion by Hani Nazer Mutheri</span>
+          <span className="font-serif italic gold-foil-text font-medium">Crafted with passion by Hani Nazer Mutheri</span>
         </div>
       </div>
     </footer>
